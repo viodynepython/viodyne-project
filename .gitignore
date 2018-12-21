@@ -1,1 +1,3 @@
-viodyne_webapp/manage.py
+/viodyne_webapp/manage.py
+/voidyne_webapp/viodyne_webapp/settings.py
+/voidyne_webapp/viodyne_webapp/__pycache__/*
