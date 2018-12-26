@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {% block title %}<title>Home</title>{% endblock %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  </head>
+  <body>
+    <header>
+      <div class="top-header">
+        <div class="container-fluid">
+          <div class="col-md-12">
+            <div class="col-md-4">
+              <div class="logo">
+                {% load static %}
+                <img src="{% static 'images/viodyne_logo.png' %} ">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4  col-xs-12">
+              <div class="input-group divsearch">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="searchTxt">
+                <div class="input-group-btn">
+                  <a class="btn btn-default bg_Gradient" id="searchBtn" href="/ProductList/Products?key="><i class="glyphicon glyphicon-search"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 cart_div">
+              <div class="cart_bt">
+                <p>Become a Destributor <br> Join Our Team</p>
+                <a href="/Cart/Quote_View" id="navToggleCart"><span class="badge" id="navTotal" ></span><span class="glyphicon glyphicon-shopping-cart"></span> Quote Request Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-header">
+        <nav class="navbar navbar-inverse bg_Gradient">
+          <div class="container-fluid">
+            <div class="col-md-12">
+              <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                
+              </div>
+              
+              <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav MoNavber">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">About Us <span class="caret"></span></a>
+                  </li>
+                  <li>
+                    <a href="#">Products <span class="caret"></span></a>
+                  </li>
+                  <li>
+                    <a href="#">Knowledge Library</a>
+                  </li>
+                  <li>
+                    <a href="#">Join Our Netwoork <span class="caret"></span></a>
+                  </li>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                  
+                </ul>
+                </div><!-- /.nav-collapse -->
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      {% block content %}
+      {% endblock %}
+      <div class="footer">
+        <div class="top-footer">
+          <div class="container">
+          <div class="col-md-12">
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+              <div class="footer_each_colom footer_Links">
+                <h5>About Us</h5> 
+                  <a href="#">Company Overview </a>
+                  <a href="#">Quality Management System </a>
+                  <a href="#">Our Mission </a>
+                  <a href="#">Our Vision </a>
+                  <a href="#" style="color: red">Testimonials </a>
+              </div>
+          </div>
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+            <div class="footer_each_colom footer_Links">
+              <h5>Products</h5> 
+                <a href="#">Body Cooling and Heating</a>
+                <a href="#">Medical Equipment</a>
+                <a href="#">Sterile Processing Supplies</a>
+                <a href="#">Surgical Instruments</a>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6 col-md-3 social-link">
+
+           <h5>Visit Us</h5> 
+            <ul class="social">
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Facebook" src="{% static 'images/LogoFacebook.png' %}"></a>
+                <a title="Facebook" href="h#" target="_blank">Facebook</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Pinterest" src="{% static 'images/LogoPinterest.png' %}"></a>
+                <a title="Pinterest" href="h#" target="_blank">Pinterest</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="GooglePlus" src="{% static 'images/LogoGooglePlus.png' %}"></a>
+                <a title="GooglePlus" href="h#" target="_blank">Google + </a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Twitter" src="{% static 'images/LogoTwitter.png' %}"></a>
+                <a title="Twitter" href="h#" target="_blank">Twitter</a>
+              </li>
+
+               <li>
+                <a href="#" target="_blank"><img class="soc icon" title="LinkedIn" src="{% static 'images/LogoLinkedlin.png' %}"></a>
+                <a title="LinkedIn" href="h#" target="_blank">LinkedIn </a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="YouTube" src="{% static 'images/LogoYouTube.png' %}"></a>
+                <a title="YouTube" href="h#" target="_blank">YouTube</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+            <div class="footer_each_colom footer_Links LastMenu">
+              <h5>Join Our Team</h5> 
+                <a href="#">Join Us Form</a>
+               <h5>Contact Us</h5> 
+                <a href="#">Contact Form</a>
+                 <a href="#">Contact Numbers</a>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="backtotop bg_Gradient">
+            <a href="#">Back to Top</a>
+        </div>
+
+          <div id="footer_bottom">            
+            <div class="container"> 
+              <div class="termUse">
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">Terms of Use</a>
+              </div>
+            <div class="copyright">
+              <span class="footer_text">Copyright © 2014 - 2018 Viodyne.  All Rights Reserved.  Viodyne™ and the Viodyne Logo are trademarks of Viodyne.</span>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="{% static 'js/viodyne.js' %}"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+  </html>
