@@ -17,127 +17,14 @@
             <div class="row">
               <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
                 <div class="MultiCarousel-inner">
+                  {% for slider in sliders.all %}
                   <div class="item">
                     <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
+                      <img src="{{ slider.Image.url }}">
+                      <p class="lead">{{ slider.Name }}</p>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                     <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                     <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="pad15 itemSlider">
-                      <img src="{% static 'images/Home/slider1.png' %}">
-                      <p class="lead">Bio Diagnostics</p>
-                    </div>
-                  </div>
-                  
+                  {% endfor %} 
                 </div>
                 <a class="leftLst"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                 <a class="rightLst"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -148,42 +35,20 @@
         <section class="viodyneBox">
           <div class="container bg-white ">
             <div class="col-md-12 border-bt">
+              {% for slider in sliders2.all %}
               <div class="col-md-4 center-block">
                 <div class="section-box-ten">
                   <!---->
                   <figure>
-                    <h3 class="box-img-title">Innovative</h3>
-                    <div class="box-img-subtitle">Products</div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                    <h3 class="box-img-title"> {{ slider.Name }}</h3>
+                    <div class="box-img-subtitle"> {{ slider.Name2 }}</div>
+                    <p>{{ slider.Text }}</p>
                     
                   </figure>
-                  <img src="{% static 'images/Innovative.jpg' %}">
+                  <img src="{{ slider.Image.url }}">
                 </div>
               </div>
-              <div class="col-md-4 center-block">
-                <div class="section-box-ten">
-                  <!---->
-                  <figure>
-                    <h3 class="box-img-title">Distinctive</h3>
-                    <div class="box-img-subtitle">Service</div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                    
-                  </figure>
-                  <img src="{% static 'images/Distinctive.jpg' %}">
-                </div>
-              </div>
-              <div class="col-md-4 center-block">
-                <div class="section-box-ten">
-                  <!---->
-                  <figure>
-                    <h3 class="box-img-title">Extending</h3>
-                    <div class="box-img-subtitle">The Quality Of Life</div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                    
-                  </figure>
-                  <img src="{% static 'images/Extending.jpg' %}">
-                </div>
-              </div>
+            {% endfor %}
               
             </div>
           </div>
@@ -191,61 +56,20 @@
         <section class="viodyneBox2">
         <div class="container bg-white viodyneBox2Inner">
             <div class="viodyneBoxes">
+             {% for slide in sliders3.all %}
               <div class="col-md-2 col-half-offset" id="p1">
                   <div class="viodyneBoxInner">
-                      <img src="{% static 'images/OperatingSuite.jpg' %}">
+                      <img src="{{ slide.Image.url }}">
                       <div class="viodyneBoxInnerTitle">
-                        Surgical Instruments
+                        {{ slide.Name }}
                       </div>
                       <div class="viewMore">
                       <a href="#">View More <span class="caret"></span></a>
                       </div>
                   </div>
               </div>
-              <div class="col-md-2 col-half-offset" id="p2">
-                  <div class="viodyneBoxInner">
-                      <img src="{% static 'images/OperatingSuite.jpg' %}">
-                       <div class="viodyneBoxInnerTitle">
-                        Surgical Instruments
-                      </div>
-                      <div class="viewMore">
-                      <a href="#">View More <span class="caret"></span></a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-2 col-half-offset" id="p3">
-                    <div class="viodyneBoxInner">
-                      <img src="{% static 'images/OperatingSuite.jpg' %}">
-                       <div class="viodyneBoxInnerTitle">
-                        Surgical Instruments
-                      </div>
-                      <div class="viewMore">
-                      <a href="#">View More <span class="caret"></span></a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-2 col-half-offset" id="p4">
-                  <div class="viodyneBoxInner">
-                      <img src="{% static 'images/OperatingSuite.jpg' %}">
-                       <div class="viodyneBoxInnerTitle">
-                        Surgical Instruments
-                      </div>
-                      <div class="viewMore">
-                      <a href="#">View More <span class="caret"></span></a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-2 col-half-offset" id="p5">
-                  <div class="viodyneBoxInner">
-                      <img src="{% static 'images/OperatingSuite.jpg' %}">
-                       <div class="viodyneBoxInnerTitle">
-                        Surgical Instruments
-                      </div>
-                      <div class="viewMore">
-                      <a href="#">View More <span class="caret"></span></a>
-                      </div>
-                  </div>
-              </div>
+              {% endfor %}
+        
             </div>
         </div>
         </section>
