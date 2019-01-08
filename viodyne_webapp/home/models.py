@@ -25,20 +25,7 @@ class Homeslide3(models.Model):
 	def __str__(self):
 		return self.Name
 
-class Reporter(models.Model):
-	full_name = models.CharField(max_length=120)
 
-	def __str__(self):
-		return self.full_name
-
-class Artical(models.Model):
-	pub_date = models.DateField()
-	headline = models.CharField(max_length=300)
-	content = models.TextField()
-	reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
-
-	def __str__(self):
-		return self.content
 						
 	
 
