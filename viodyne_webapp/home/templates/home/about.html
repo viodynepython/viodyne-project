@@ -1,9 +1,299 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About US</title>
-</head>
-<body>
-<h1>This is me about-us</h1>
-</body>
-</html>
+
+{% extends "home/header.html" %}>
+      <!-- Home slider -->
+      {% block content %}
+      {% load static %}
+        <div class="main-wrapper bg-gray">
+      <section class="about-us">
+        <div class="container bg-white">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="AboutUsheader h2_blue">About Us</h3>
+              <div class="col-md-3">
+                <div class="aboutusImg_con">
+                  <img id="aboutusImg" src={% static 'images/AboutUs.JPG' %} class="img-responsive">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="aboutUs-tab">
+                  <ul class="nav nav-tabs tab_about_menu">
+                    <li class="active"><a data-toggle="tab" href="#Company">Company Overview</a></li>
+                    <li><a data-toggle="tab" href="#QMS">Quality Management System</a></li>
+                    <li><a data-toggle="tab" href="#Mission">Our Mission</a></li>
+                    <li><a data-toggle="tab" href="#Vision">Our Vision</a></li>
+                    <li class="testimonialsTab"><a data-toggle="tab" href="#Testimonials">Testimonials</a></li>
+                  </ul>
+                    <div class="tab-content  tab_about_content">
+                      <div id="Company" class="tab-pane fade in active">
+                          <div class="company-over">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-12">
+                                    <p align="justify">Viodyne is a global provider of medical solutions with offices and facilities in various countries, our product portfolio empower our clients to tackle complex medical challenges.</p>
+                                    <h2>Our Core Values</h2>
+                                    <ul class="about-usUl">
+                                      <li><span>Continuous Self Improvement and Innovation</span></li>
+                                      <li><span>Contagious Giving</span></li>
+                                      <li><span>Making the Impossible Possible</span></li>
+                                      <li><span>High Service Standard</span></li>
+                                      <li><span>Rigorous Quality System</span></li>
+                                      <li><span>Empowering and Inspiring</span></li>
+                                      <li><span>Extending the Quality of Life and Save Lives</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-2 col-xs-12 ">
+                                    <p align="justify"> <img src={% static 'images/CompanyOverview.jpg'%}></p>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div id="QMS" class="tab-pane fade">
+                          <div class="company-over">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-12">
+                                    <p align="justify">Our Quality Management System's direction is to consistently meet our clients highest requirements and expectations. </p>
+                                    <h2>Quality Management System Principals</h2>
+                                    <ul class="about-usUl">
+                                      <li><span>Customer Focus</span></li>
+                                      <li><span>Leadership</span></li>
+                                      <li><span>Engagement of People</span></li>
+                                      <li><span>Process Approach</span></li>
+                                      <li><span>Improvement</span></li>
+                                      <li><span>Evidence-Based Decision Making</span></li>
+                                      <li><span>Relationship Management</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-2 col-xs-12 ">
+                                    <p align="justify"> <img src={% static 'images/qms.png' %}></p>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div id="Mission" class="tab-pane fade">
+                        <div class="company-over">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-12">
+                                    <p align="justify">Our mission is to provide cutting-edge products and the highest service standard. To meet this challenge, we have made a commitment to remain on the forefront of emerging innovations. We recruit from the top percentile of professionals and are continuously involved in their career development to ensure the implementation of the highest service standard to clients.</p>
+                                     <p align="justify">Our innovation and service standard are two of the core values that lead our mission.</p>
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-2 col-xs-12 ">
+                                    <p align="justify"> <img src={% static 'images/OurMission.jpg' %}></p>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div id="Vision" class="tab-pane fade">
+                          <div class="company-over">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-12">
+                                    <p align="justify" style="margin-top: 70px">To extend the quality of life and save lives.</p>
+
+                                </div>
+                                <div class="col-sm-3 col-sm-offset-2 col-xs-12 ">
+                                    <p align="justify"> <img src={% static 'images/OurVision.JPG'%}></p>
+                                </div>
+                            </div>
+                          </div>
+
+                      </div>
+                      <div id="Testimonials" class="tab-pane fade">
+                          <div class="company-over">
+                            <div class="row">
+                                <div class="col-sm-8 col-xs-12">
+                                    <div class="testimonials">
+                                      <p>We receive many comments from satisfied custmers and want to share some with you.</p>
+                                      <p>Fell free to send us your own comments.</p>
+                                      <div class="testimonialsSec">
+                                        <div class="testimonialsBox">
+                                          <div class="testimonialsStar">
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star"></span>
+                                              <span class="fa fa-star"></span>
+                                          </div>
+                                          <div class="testimonialsDes">
+                                          <p>"We have enjoyed our interactions with Viodyne. They have a great team that provides us with excellent services."</p>
+                                          <div class="author">Dr. Smith</div>
+                                          </div>
+                                        </div>
+
+                                        <div class="testimonialsBox">
+                                          <div class="testimonialsStar">
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star"></span>
+                                              <span class="fa fa-star"></span>
+                                          </div>
+                                          <div class="testimonialsDes">
+                                          <p>"We have enjoyed our interactions with Viodyne. They have a great team that provides us with excellent services."</p>
+                                          <div class="author">Dr. Smith</div>
+                                          </div>
+                                        </div>
+
+                                        <div class="testimonialsBox">
+                                          <div class="testimonialsStar">
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star"></span>
+                                              <span class="fa fa-star"></span>
+                                          </div>
+                                          <div class="testimonialsDes">
+                                          <p>"We have enjoyed our interactions with Viodyne. They have a great team that provides us with excellent services."</p>
+                                          <div class="author">Dr. Smith</div>
+                                          </div>
+                                        </div>
+
+                                        <div class="testimonialsBox">
+                                          <div class="testimonialsStar">
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star checked"></span>
+                                              <span class="fa fa-star"></span>
+                                              <span class="fa fa-star"></span>
+                                          </div>
+                                          <div class="testimonialsDes">
+                                          <p>"We have enjoyed our interactions with Viodyne. They have a great team that provides us with excellent services."</p>
+                                          <div class="author">Dr. Smith</div>
+                                          </div>
+                                        </div>
+
+
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12 ">
+                                    <p align="justify"> <img src={% static 'images/Testimonials.png' %}></p>
+
+                                    <div class="testimonialsForm">
+                                      <form action="/action_page.php">
+                                        <div class="form-group">
+                                          <label for="name">Name</label>
+                                          <input type="text" class="form-control" id="name" placeholder="" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="name">Email</label>
+                                          <input type="text" class="form-control" id="email" placeholder="" name="email">
+                                        </div>
+
+                                         <div class="form-group">
+                                          <label for="name">Comment</label>
+                                          <textarea maxlength="200" rows="5"></textarea>
+                                        </div>
+                                        <div class="testimonialsSend">
+                                          <button type="submit" class="btn btn-default bg_Gradient">Send</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+  {% endblock %}
+
+        <div class="footer">
+        <div class="top-footer">
+          <div class="container">
+          <div class="col-md-12">
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+              <div class="footer_each_colom footer_Links">
+                <h5>About Us</h5>
+                  <a href="#">Company Overview </a>
+                  <a href="#">Quality Management System </a>
+                  <a href="#">Our Mission </a>
+                  <a href="#">Our Vision </a>
+                  <a href="#" style="color: red">Testimonials </a>
+              </div>
+          </div>
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+            <div class="footer_each_colom footer_Links">
+              <h5>Products</h5>
+                <a href="#">Body Cooling and Heating</a>
+                <a href="#">Medical Equipment</a>
+                <a href="#">Sterile Processing Supplies</a>
+                <a href="#">Surgical Instruments</a>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6 col-md-3 social-link">
+
+           <h5>Visit Us</h5>
+            <ul class="social">
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Facebook" src="images/LogoFacebook.png"></a>
+                <a title="Facebook" href="h#" target="_blank">Facebook</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Pinterest" src="images/LogoPinterest.png"></a>
+                <a title="Pinterest" href="h#" target="_blank">Pinterest</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="GooglePlus" src="images/LogoGooglePlus.png"></a>
+                <a title="GooglePlus" href="h#" target="_blank">Google + </a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="Twitter" src="images/LogoTwitter.png"></a>
+                <a title="Twitter" href="h#" target="_blank">Twitter</a>
+              </li>
+
+               <li>
+                <a href="#" target="_blank"><img class="soc icon" title="LinkedIn" src="images/LogoLinkedlin.png"></a>
+                <a title="LinkedIn" href="h#" target="_blank">LinkedIn </a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank"><img class="soc icon" title="YouTube" src="images/LogoYouTube.png"></a>
+                <a title="YouTube" href="h#" target="_blank">YouTube</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="col-sm-3 col-xs-6 col-md-3 ">
+            <div class="footer_each_colom footer_Links LastMenu">
+              <h5>Join Our Team</h5>
+                <a href="#">Join Us Form</a>
+               <h5>Contact Us</h5>
+                <a href="#">Contact Form</a>
+                 <a href="#">Contact Numbers</a>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="backtotop bg_Gradient">
+            <a href="#">Back to Top</a>
+        </div>
+
+          <div id="footer_bottom">
+            <div class="container">
+              <div class="termUse">
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">Terms of Use</a>
+              </div>
+            <div class="copyright">
+              <span class="footer_text">Copyright © 2014 - 2018 Viodyne.  All Rights Reserved.  Viodyne™ and the Viodyne Logo are trademarks of Viodyne.</span>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="js/viodyne.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+    </body>
+  </html>
