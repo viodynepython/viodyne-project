@@ -100,7 +100,7 @@ span#navTotal {
   right: 30px;
   left: inherit;
 }
-.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
   font-size: 12px;
   background-color: #fff;
@@ -131,7 +131,7 @@ span#navTotal {
     padding-left: 12px;
 }
 .bg-no-overlay {
-   
+
    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -378,7 +378,7 @@ ul.social li a {
 
 .termUse {
     padding: 10px 0 0 0;
-}	
+}
 
 .footer {
     position: relative;
@@ -397,7 +397,134 @@ div#footer_bottom a {
     color: #fff;
     border-right: 1px solid #fff;
     padding: 0 10px;
+}/*about page css start*/
+
+.aboutusImg_con {
+    padding-top: 20px;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 5px;
+    margin-left: 15px;
 }
+
+
+.AboutUsheader {
+    padding: 15px;
+    font-family: Montserrat, sans-serif;
+    color: #12295d;
+    font-size: 24px;
+    font-weight: 500;
+}
+.tab_about_content {
+    padding: 20px;
+    border: 1px solid rgb(151, 151, 151);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+       -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topright: 5px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+   border: 1px solid rgb(151, 151, 151);
+       border-bottom-color: transparent;
+           border-top: thick #3a93cf solid;
+}
+
+.tab_about_menu > li a {
+        border-top: 5px solid transparent;
+ }
+
+.tab_about_menu {
+    border-bottom: none;
+}
+
+.tab_about_menu > li a:hover {
+
+    border-top: thick #3a93cf solid;
+    box-sizing: border-box;
+
+}
+
+.tab_about_content img {
+    height: 170px;
+    float: right;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 5px;
+}
+
+.company-over {
+    margin: 3% 5%;
+}
+.company-over h2 {
+    color: #0b6bb5;
+    font-size: 16px;
+}
+
+ul.about-usUl li {
+    color: #0b6bb5;
+}
+
+ul.about-usUl li span {
+    color: #333333;
+}
+
+section.about-us {
+    margin-bottom: 30px;
+}
+
+li.testimonialsTab.active a {
+      color: red !important;
+}
+
+.testimonials {
+    color: red;
+}
+
+.testimonialsStar .checked {
+    color: orange;
+}
+.testimonialsStar span {
+    color: #000;
+}
+
+.testimonialsBox {
+    margin: 30px 0;
+    padding: 20px 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+}
+.testimonialsStar {
+    margin-bottom: 10px;
+}
+
+.company-over img {
+    width: 100%;
+}
+
+.testimonialsForm {
+    clear: both;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.testimonialsForm textarea {
+    width: 100%;
+}
+
+.testimonialsSend .btn {
+    padding: 10px 40px;
+    color: #ffffff !important;
+    text-transform: uppercase;
+        border-radius: 5px !important;
+}
+
+.testimonialsSend {
+    text-align: right;
+}
+
+/*about page css end*/
+
 
 /*responsive css start*/
 

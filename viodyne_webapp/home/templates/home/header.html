@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,16 +52,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                
+
               </div>
-              
+
               <div class="collapse navbar-collapse js-navbar-collapse">
                 <ul class="nav navbar-nav MoNavber">
                   <li>
                     <a href="#">Home</a>
                   </li>
                   <li>
-                    <a href="#">About Us <span class="caret"></span></a>
+                    <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
                   </li>
                   <li>
                     <a href="#">Products <span class="caret"></span></a>
@@ -75,7 +75,7 @@
                   <li>
                     <a href="#">Contact Us</a>
                   </li>
-                  
+
                 </ul>
                 </div><!-- /.nav-collapse -->
               </div>
@@ -91,8 +91,8 @@
           <div class="col-md-12">
           <div class="col-sm-3 col-xs-6 col-md-3 ">
               <div class="footer_each_colom footer_Links">
-                <h5>About Us</h5> 
-                  <a href="#">Company Overview </a>
+                <h5>About Us</h5>
+                  <a href={% url 'aboutus' %}>Company Overview </a>
                   <a href="#">Quality Management System </a>
                   <a href="#">Our Mission </a>
                   <a href="#">Our Vision </a>
@@ -101,7 +101,7 @@
           </div>
           <div class="col-sm-3 col-xs-6 col-md-3 ">
             <div class="footer_each_colom footer_Links">
-              <h5>Products</h5> 
+              <h5>Products</h5>
                 <a href="#">Body Cooling and Heating</a>
                 <a href="#">Medical Equipment</a>
                 <a href="#">Sterile Processing Supplies</a>
@@ -110,7 +110,7 @@
           </div>
           <div class="col-sm-3 col-xs-6 col-md-3 social-link">
 
-           <h5>Visit Us</h5> 
+           <h5>Visit Us</h5>
             <ul class="social">
               <li>
                 <a href="#" target="_blank"><img class="soc icon" title="Facebook" src="{% static 'images/LogoFacebook.png' %}"></a>
@@ -147,9 +147,9 @@
 
           <div class="col-sm-3 col-xs-6 col-md-3 ">
             <div class="footer_each_colom footer_Links LastMenu">
-              <h5>Join Our Team</h5> 
+              <h5>Join Our Team</h5>
                 <a href="#">Join Us Form</a>
-               <h5>Contact Us</h5> 
+               <h5>Contact Us</h5>
                 <a href="#">Contact Form</a>
                  <a href="#">Contact Numbers</a>
             </div>
@@ -161,8 +161,8 @@
             <a href="#">Back to Top</a>
         </div>
 
-          <div id="footer_bottom">            
-            <div class="container"> 
+          <div id="footer_bottom">
+            <div class="container">
               <div class="termUse">
                   <a href="#">Privacy Policy</a>
                   <a href="#">Terms of Use</a>

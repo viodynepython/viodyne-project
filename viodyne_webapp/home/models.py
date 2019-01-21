@@ -14,9 +14,9 @@ class HomeSlider2(models.Model):
 	Name2 = models.CharField(max_length=120)
 	Text  = models.CharField(max_length=300)
 	Image = models.ImageField(upload_to='slider2/')
-	
+
 	def __str__(self):
-		return self.Name					
+		return self.Name
 
 class Homeslide3(models.Model):
 	Name  = models.CharField(max_length=120)
@@ -24,9 +24,3 @@ class Homeslide3(models.Model):
 
 	def __str__(self):
 		return self.Name
-
-
-						
-	
-
-
