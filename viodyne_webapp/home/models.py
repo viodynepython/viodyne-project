@@ -24,3 +24,17 @@ class Homeslide3(models.Model):
 
 	def __str__(self):
 		return self.Name
+
+class ContactUs(models.Model):
+	NAME  = models.CharField(max_length=120)
+	COMPANY = models.CharField(max_length=120)
+	TELEPHONE = models.CharField(max_length=120)
+	EMAIL = models.EmailField(max_length=120)
+	MESSAGE  = models.CharField(max_length=300)
+
+class JoinUs(models.Model):
+	NAME  = models.CharField(max_length=120)
+	COMPANY = models.CharField(max_length=120)
+	TELEPHONE = models.CharField(max_length=120)
+	EMAIL = models.EmailField(max_length=120)
+	MESSAGE  = models.CharField(max_length=300)

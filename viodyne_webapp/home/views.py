@@ -1,6 +1,6 @@
-from django.shortcuts import render, HttpResponse
-from .models import HomeSlider, HomeSlider2, Homeslide3
-
+from django.shortcuts import render, redirect, HttpResponse
+from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs
+from .forms import ContactForm, JoinusForm
 # Create your views here.
 def index(request):
 	slider  = HomeSlider.objects
@@ -11,3 +11,26 @@ def index(request):
 
 def aboutus(request):
 	return  render(request, 'home/about.html')
+
+def contactus(request):
+	if request.method == 'POST':
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('successview')
+		else:
+			form = ContactForm()
+	return render(request, 'home/contact.html', {'form': ContactForm})
+
+def joinus(request):
+	if request.method == 'POST':
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('successview')
+		else:
+			form = ContactForm()
+	return render(request, 'home/join.html', {'form':JoinusForm})
+	
+def successview(request):
+	return  render(request, 'home/thanks.html')
