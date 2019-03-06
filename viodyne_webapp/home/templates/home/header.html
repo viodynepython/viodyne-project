@@ -21,7 +21,7 @@
             <div class="col-md-4">
               <div class="logo">
                 {% load static %}
-                <img src="{% static 'images/viodyne_logo.png' %} ">
+                <a href="/"><img src="{% static 'images/viodyne_logo.png' %} ">
               </div>
             </div>
             <div class="col-md-4 col-sm-4  col-xs-12">
@@ -180,5 +180,34 @@
       <script src="{% static 'js/viodyne.js' %}"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      
+      	<script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRftvH1Qoqh_qQvRZt_3VtZ__5o20MkfE&callback=initMap">
+      </script>
+      <script type="text/javascript">
+
+          function initMap() {
+              var center = { lat: 28.4832119, lng: -33.4590338 };
+              var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 2,
+                  center: center
+              });
+              var marker = new google.maps.Marker({
+                  position: { lat: 24.742460, lng: 46.644594},
+                  map: map,
+                  title: 'Saudi Arabia'
+              });
+
+              var beachMarker = new google.maps.Marker({
+                  position: { lat: 34.1135167, lng: -117.872065 },
+                  map: map,
+                  title: 'United States'
+              });
+
+          }
+
+      </script>
+
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
   </html>

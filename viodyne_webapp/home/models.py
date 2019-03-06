@@ -26,15 +26,21 @@ class Homeslide3(models.Model):
 		return self.Name
 
 class ContactUs(models.Model):
-	NAME  = models.CharField(max_length=120)
-	COMPANY = models.CharField(max_length=120)
+	NAME      = models.CharField(max_length=120)
+	COMPANY   = models.CharField(max_length=120)
 	TELEPHONE = models.CharField(max_length=120)
-	EMAIL = models.EmailField(max_length=120)
-	MESSAGE  = models.CharField(max_length=300)
+	EMAIL	  = models.EmailField(max_length=120)
+	MESSAGE   = models.CharField(max_length=300)
+
+	def __str__(self):
+		return self.NAME
 
 class JoinUs(models.Model):
-	NAME  = models.CharField(max_length=120)
-	COMPANY = models.CharField(max_length=120)
-	TELEPHONE = models.CharField(max_length=120)
-	EMAIL = models.EmailField(max_length=120)
-	MESSAGE  = models.CharField(max_length=300)
+	FIRST_NAME = models.CharField(max_length=120)
+	LAST_NAME  = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+
+	def __str__(self):
+		return self.FIRST_NAME
