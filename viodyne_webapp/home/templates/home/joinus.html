@@ -1,0 +1,171 @@
+{% extends "home/header.html" %}>
+      <!-- Home slider -->
+      {% block content %}
+      {% load static %}
+
+					<html>
+					<head>
+						<title>joine us</title>
+						<style type="text/css">
+						.render_body{
+							font-family: Montserrat, sans-serif;
+						    background-color: #ebeef3;
+						    min-width: 330px;
+						    padding-left: 40px;
+						    padding-right: 40px;
+
+						}
+						.Home_content {
+						    background: #fff;
+						    width: 100%;
+						    padding: 20px;
+						    position: relative;
+						    float: left;
+						    border-bottom: 100px;
+						    border-bottom-color: white;
+						    -webkit-box-shadow: 0px 200px 0px 0px white;
+						    -moz-box-shadow: 0px 200px 0px 0px white;
+						    box-shadow: 0px 200px 0px 0px white;
+						}
+							p{
+								color:#37486e;
+								font-size: 17px;
+								font-weight: 500;
+								word-spacing: 2px;
+
+							}
+							h2{
+								font-family: Montserrat, sans-serif !important;
+                                color: #37486e !important;
+							    font-size: 24px !important;
+							    font-weight: 500 !important;
+									}
+							}
+
+						</style>
+					</head>
+					<body>
+						<div class="render_body">
+
+
+					<div class="container-fluid">
+						<div class="Home_content">
+						<div class="row">
+							<br>
+							<br>
+								<div class="col-sm-3">
+									<h2>Join Our Team</h2>
+									<img src={% static 'images/JoinOurTeam.jpg' %} class="img-responsive img-rounded" style="width: 100%; height: 28%;">
+								</div>
+								<div class="col-sm-9">
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+
+								<p>Our people are our greatest asset.  They are the driving force behind our success.  We are always looking for passionate people who thrive on meeting the challenges of future generations.</p>
+					                <p>Our work is making a difference in the lives of many around the world.  Join our team.  Change lives and make a difference.</p>
+					            </div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">
+
+							</div>
+							<div class="col-sm-9">
+							<p>Viodyne. <span style="font-style: italic;">Working towards a healthier and better world.</span> &nbsp; &nbsp; &nbsp;<a class="btn btn-lg JoinOT_b bg_Gradient custom-a-tag" id="joinUSbtn" data-target="#form_Container" data-toggle="collapse" aria-expanded="true">JOIN US! <span style="font-size:15px">▼</span></a> </p>
+
+                    <div class="col-md-6 col-md-offset-3 col-lg-6 col-sm-12 collapse in" style="text-align: left !important;" id="form_Container" aria-expanded="true">
+                        <br>
+                        <p>We are looking to attract people who share our passion and vision.  If you are driven to make a difference, join us.  Send us your information, together we can make the impossible possible.</p>
+                        <div class="row">
+                            <br>
+
+                            <form role="form" action="" method="POST">
+                             {% csrf_token %}
+                             <div class="col-md-6">
+                               <div class="form-group">
+                                 <label for="First Name"><span style="color: #f70611;">* </span>FIRST NAME:</label>
+                                 {{ form.FIRST_NAME }}
+                                  </div>
+                                   </div>
+                             <div class="col-md-6">
+                               <div class="form-group">
+                                 <label for="Last Name">LAST NAME:</label>
+                                 {{ form.LAST_NAME }}
+                                 </div>
+                                 </div>
+                             <div class="col-md-6">
+                               <div class="form-group">
+                                 <label for="Telephone">TELEPHONE:</label>
+                                 {{ form.TELEPHONE }}
+                                 </div>
+                                 </div>
+                             <div class="col-md-6">
+                               <div class="form-group">
+                                 <label for="Email"><span style="color: #f70611;">* </span>EMAIL:</label>
+                                 {{ form.EMAIL }}
+                                 </div>
+                                 </div>
+                             <div class="col-md-12">
+                               <div class="form-group">
+                                 <label for="Message"><span style="color: #f70611;">* </span>Tell us what your looking for and why you would be the ideal candidate.:</label>
+                                 {{ form.MESSAGE }}
+                                 </div>
+                                </div>
+                                <div class="col-md-7" style="margin-bottom:10px;">
+                                   <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                               </div>
+
+                                <div class="col-md-offset-13 col-md-4">
+                                  <input type="submit" class="btn1 btn1 btn-success btn-block bg_Gradient" name="Send" value="SEND">
+
+                                </div>
+															</form>
+                            <script>
+                                if (location.hash) {
+                                    $(location.hash).collapse('show');
+                                }
+                                var activeTab = localStorage.getItem('activeTabJoin');
+                                if (activeTab) {
+                                    $(activeTab).collapse('show');
+                                }
+
+                                $('body').on('click', 'a[data-toggle=\'collapse\']', function (e) {
+                                    e.preventDefault()
+                                    var tab_name = $(this).data("target");
+                                    if (history.pushState) {
+                                        history.pushState(null, null, tab_name)
+                                    }
+                                    else {
+                                        location.hash = tab_name
+                                    }
+                                    localStorage.setItem('activeTabJoin', tab_name)
+
+                                    $(tab_name).collapse('toggle');
+                                    return false;
+                                });
+                                $(window).on('popstate', function () {
+                                    var anchor = location.hash ||
+                                      $('a[data-toggle=\'collapse\']').first().data("target");
+                                    $(anchor).collapse('show');
+                                });
+                            </script>
+
+
+
+
+
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+					</body>
+					</html>
+{% endblock %}

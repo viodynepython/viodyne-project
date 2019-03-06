@@ -1,0 +1,283 @@
+{% extends "home/header.html" %}
+{% block content %}
+
+{% load static%}
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Viodyne</title>
+
+    <link rel="stylesheet" href="/Contents/css/cart/reset.css?3"> <!-- CSS reset -->
+    <link rel="stylesheet" href="/Contents/css/cart/style.css?2">
+
+
+
+    <!-- Custom CSS -->
+    <link href="/Contents/css/Home.css?v=1" rel="stylesheet"/>
+
+
+
+    <script src="/Contents/js/home/home.js"></script>
+
+
+
+   <!-- Resource style -->
+    <script src="/Contents/js/cart/main.js"></script> <!-- Resource jQuery -->
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="icon" href="/Contents/page_images/favicon.ico" type="image/x-icon" />
+
+
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="banner0" class="container-fluid bg_Gradient">
+        <div class="container">
+            <div class="col-sm-6 col-md-6 col-xs-4 banner_tagline">
+                <h5 style="font-weight:500;color:white">Extending the quality of life and saving lives</h5>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-xs-8">
+                <div style="float:right;padding-top:8px;">
+                    <a href="https://www.facebook.com/viodyne" target="_blank"><img src={% static 'images/LogoFacebook.png' %} style="margin-left:10px;" /></a>
+                    <a href="https://plus.google.com/+Viodyne" target="_blank"><img src={% static 'images/LogoGooglePlus.png' %} style="margin-left:10px;" /></a>
+                    <a href="https://www.linkedin.com/company/viodyne" target="_blank"><img src={% static 'images/LogoLinkedlin.png' %} style="margin-left:10px;" /></a>
+                    <a href="https://www.pinterest.com/viodyne/" target="_blank"><img src={% static 'images/LogoPinterest.png' %} style="margin-left:10px;" /></a>
+                    <a href="https://www.twitter.com/Viodyne" target="_blank"><img src={% static 'images/LogoTwitter.png' %} style="margin-left:10px;" /></a>
+                    <a href="https://www.youtube.com/c/Viodyne" target="_blank"><img src={% static 'images/LogoYouTube.png' %} style="margin-left:10px;" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Website_Banner" class="container-fluid">
+        <div class="container">
+            <div class="col-md-4 col-sm-4  col-xs-4" style="padding-left: 0px;">
+
+                <div class="logo_text">
+                    <a href="/"><img src={%static 'images/viodyne_logo.png'%}></a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4  col-xs-8">
+
+                <div class="input-group divsearch">
+                    <input type="text" class="form-control" style="border-color:#12295d" placeholder="Search" name="q" id="searchTxt">
+                    <div class="input-group-btn">
+                        <a class="btn btn-default bg_Gradient" id="searchBtn" href="/ProductList/Products?key=" style="border-color:#12295d;color:#fff"><i class="glyphicon glyphicon-search"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3 col-sm-4 col-xs-12 cart_div">
+                <a href="/Cart/Quote_View" id="navToggleCart" style="color:#173374;font-size:1.2em"><span class="badge" id="navTotal" style="padding:5px 7px;background-color:#c70909;"></span><span class="glyphicon glyphicon-shopping-cart"></span> Quote Request Cart</a>
+            </div>
+            </div>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" id="ulnav">
+
+
+                </ul>
+                <ul class="nav navbar-nav" id="mobile_ulnav">
+
+
+                </ul>
+
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="render_body" >
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<div class="container">
+    <div class="Home_content" style="font-family:'Questrial', sans-serif;background-color:#fbfbfb">
+        <div class="row">
+
+            <div class="col-md-6 col-lg-6 col-sm-12" >
+                <h2 class="page_headers">Contact Us</h2>
+                <br />
+                <p>We are here to answer any questions you may have about your Viodyne experience. Reach out to us and we'll respond to you as soon as we can.</p>
+                <div class="row">
+                    <br />
+
+                    <form role="form" action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+
+                        <div class="col-md-7" style="margin-bottom:10px;">
+                            <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                        </div>
+
+                        <div class="col-md-offset-1 col-md-4" style="margin-bottom:10px;padding:10px">
+                            <input type="submit" class="btn btn btn-success btn-block bg_Gradient" name="Send" value="SEND" />
+                        </div>
+                  </form>
+                          </div>
+                   <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12">
+                <div id="map_wrapper" style=" height: 400px;">
+                    <div id="map" style=" width: 100%; height: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+
+        <div class="row">
+            <div class="col-md-12" id="ContactNumbers">
+                <div class="row r90percent">
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <h4 style="color:#12295d;">Telephone</h4>
+                        <br />
+                    </div>
+                    <div class="col-md-6"><img src={%static 'images/telusa.png' %}>
+                      <br /><br />
+
+                        <p>+1 858 255 0415</p>
+                    </div>
+                    <div class="col-md-6" style="display:none">
+                        <h5>Saudi Arabia</h5>
+                        <p>+966</p>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="col-md-12">
+                        <h4 style="color:#12295d">Address</h4>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+
+                        <p>
+                            1430 S. Grand Ave., #283<br />
+                            Glendora , CA 91740 USA
+                        </p>
+                    </div>
+                    <div class="col-md-6" style="display:none">
+                        <h5>Saudi Arabia</h5>
+                        <p>
+                            Al Takhassusi Road
+                            <br />Riyadh, KSA
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4 style="color:#12295d">Social Networks</h4>
+                    <br />
+
+                    <p>
+
+                        <a href="https://www.facebook.com/viodyne" target="_blank">
+                            <img class="soc icon" title="Facebook" src={% static 'images/LogoFacebook.png' %}
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="Facebook" href="https://www.facebook.com/viodyne" target="_blank">Facebook</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+
+                        <a href="https://www.pinterest.com/viodyne" target="_blank">
+                            <img class="soc icon" title="Pinterest" src={% static 'images/LogoPinterest.png' %}
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="Pinterest" href="https://www.pinterest.com/viodyne" target="_blank">Pinterest</a><br />
+
+                    </p>
+
+                    <p>
+
+                        <a href="https://google.com/+Viodyne" target="_blank">
+                            <img class="soc icon" title="Google +" src={% static 'images/LogoGooglePlus.png' %}
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="Google +" href="https://google.com/+Viodyne" target="_blank">Google +</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                        <a href="https://www.twitter.com/Viodyne" target="_blank">
+                            <img class="soc icon" title="Twitter" src={% static 'images/LogoTwitter.png' %}
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="Twitter" href="https://www.twitter.com/Viodyne" target="_blank">Twitter</a><br />
+
+                    </p>
+
+                    <p>
+
+                        <a href="https://www.linkedin.com/company/viodyne" target="_blank">
+                            <img class="soc icon" title="LinkedIn" src={% static 'images/LogoLinkedlin.png'%}
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="LinkedIn" href="https://www.linkedin.com/company/viodyne" target="_blank">LinkedIn</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+
+                        <a href="https://www.youtube.com/c/Viodyne" target="_blank">
+                            <img class="soc icon" title="YouTube" src={% static 'images/LogoYouTube.png'%}>
+                        </a>
+
+                        <a style="font-family: helvetica; font-size:13px; color: #7c7c7c;" title="YouTube" href="https://www.youtube.com/c/Viodyne" target="_blank">YouTube</a>
+
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRftvH1Qoqh_qQvRZt_3VtZ__5o20MkfE&callback=initMap">
+</script>
+
+<script type="text/javascript">
+
+    function initMap() {
+        var center = { lat: 28.4832119, lng: -33.4590338 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: center
+        });
+        var marker = new google.maps.Marker({
+            position: { lat: 24.742460, lng: 46.644594},
+            map: map,
+            title: 'Saudi Arabia'
+        });
+
+        var beachMarker = new google.maps.Marker({
+            position: { lat: 34.1135167, lng: -117.872065 },
+            map: map,
+            title: 'United States'
+        });
+
+    }
+
+</script>
+
+
+{% endblock %}

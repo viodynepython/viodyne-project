@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs
-from .forms import ContactForm, JoinusForm
+from .forms import ContactForm, JoinUsForm
 # Create your views here.
 def index(request):
 	slider  = HomeSlider.objects
@@ -15,22 +15,37 @@ def aboutus(request):
 def contactus(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
+		print(form.errors)
+		name = request.POST.get('NAME', '')
+		email = request.POST.get('EMAIL', '')
+		company = request.POST.get('COMPANY', '')
+		phone = request.POST.get('TELEPHONE', '')
+		msg = request.POST.get('MESSAGE', '')
 		if form.is_valid():
-			form.save()
+			p = ContactUs(NAME=name, COMPANY=company, TELEPHONE=phone, EMAIL=email, MESSAGE=msg)
+			p.save()
 			return redirect('successview')
 		else:
 			form = ContactForm()
-	return render(request, 'home/contact.html', {'form': ContactForm})
+	return render(request, 'home/form1.html', {'form': ContactForm})
+
 
 def joinus(request):
 	if request.method == 'POST':
-		form = ContactForm(request.POST)
+		form = JoinUsForm(request.POST)
+		print(form.errors)
+		first_name = request.POST.get('FIRST_NAME', '')
+		email = request.POST.get('EMAIL', '')
+		last_name = request.POST.get('LAST_NAME', '')
+		phone = request.POST.get('TELEPHONE', '')
+		msg = request.POST.get('MESSAGE', '')
 		if form.is_valid():
-			form.save()
+			p = JoinUs(FIRST_NAME=first_name, LAST_NAME=last_name, TELEPHONE=phone, EMAIL=email, MESSAGE=msg)
+			p.save()
 			return redirect('successview')
 		else:
-			form = ContactForm()
-	return render(request, 'home/join.html', {'form':JoinusForm})
-	
+			form = JoinUsForm()
+	return render(request, 'home/joinus.html', {'form': JoinUsForm})
+
 def successview(request):
 	return  render(request, 'home/thanks.html')

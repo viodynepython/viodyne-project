@@ -119,7 +119,7 @@ span#navTotal {
 .bottom-header .navbar-inverse .navbar-nav>li>a {
    color: #ffffff;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .bottom-header .nav>li>a {
@@ -397,8 +397,8 @@ div#footer_bottom a {
     color: #fff;
     border-right: 1px solid #fff;
     padding: 0 10px;
-}/*about page css start*/
-
+}
+/*about page css start*/
 .aboutusImg_con {
     padding-top: 20px;
     border: 1px solid rgb(151, 151, 151);
@@ -522,9 +522,7 @@ li.testimonialsTab.active a {
 .testimonialsSend {
     text-align: right;
 }
-
 /*about page css end*/
-
 
 /*responsive css start*/
 
@@ -563,3 +561,105 @@ h1.sliderText {
 .col-half-offset{width: 100%;}
 
 }
+
+.page_headers {
+    font-family: Montserrat, sans-serif !important;
+    color: #12295d !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+}
+
+
+
+
+
+.left{
+    margin-left: 5%;
+}
+
+
+
+.recapt{
+    top: 30px;
+    position: relative;
+}
+
+.btn_1 {
+    margin-top: 40px;
+}
+
+.btn{display: inline-block;
+    padding: 8px 12px;
+    margin-left:17px;
+    border-radius:4px !important;
+}
+.btn1{display: inline-block;
+    padding: 8px 12px;
+    margin-left:39px;
+    border-radius:4px !important;
+}
+.map_1{
+    width: 100%;
+    height: 400px;
+    margin-top: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.top{
+    margin-top: 40px;
+}
+
+.top1{
+    margin-top: 15px;
+}
+
+.tel_text{
+    font-family: helvetica;
+    font-size: 20px;
+    color: #7c7c7c;
+}
+
+.add p{
+    font-family: helvetica;
+    font-size: 13px;
+    color: #7c7c7c;
+}
+
+.add h4{
+    font-family: helvetica;
+    font-size: 20px;
+    color: #7c7c7c;
+}
+
+.s_icon1{
+    float: left;
+    width: 50%
+    height: 150px;
+    font-family: helvetica;
+    font-size: 13px;
+    color: #7c7c7c;
+    display: block;
+}
+
+.s_icon2{
+    float: left;
+    width: 50%
+    height: 150px;
+    position: relative;
+    font-family: helvetica;
+    font-size: 13px;
+    color: #7c7c7c;
+    top: 40px;
+}
+
+.soc {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.custom-a-tag {
+    r: white;
+    color: white;
+}
+
