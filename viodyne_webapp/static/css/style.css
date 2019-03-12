@@ -595,7 +595,7 @@ h1.sliderText {
 }
 .btn1{display: inline-block;
     padding: 8px 12px;
-    margin-left:39px;
+    margin-left:50px;
     border-radius:4px !important;
 }
 .map_1{
@@ -662,4 +662,6 @@ h1.sliderText {
     r: white;
     color: white;
 }
-
+#joinUSbtn:hover{
+    color: #fff !important;
+}
