@@ -612,7 +612,7 @@ h1.sliderText {
 
 .top1{
     margin-top: 15px;
-    padding: 24px;
+    padding: 24px !important;
 }
 
 .tel_text{
@@ -624,13 +624,13 @@ h1.sliderText {
 .add p{
     font-family: helvetica;
     font-size: 13px;
-    color: #212221;
+    color: #212221 !important;
 }
 
 .add h4{
     font-family: helvetica;
     font-size: 20px;
-    color: #12295d;
+    color: #12295d !important;
 }
 
 .s_icon1{
