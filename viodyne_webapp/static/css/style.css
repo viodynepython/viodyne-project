@@ -595,7 +595,7 @@ h1.sliderText {
 }
 .btn1{display: inline-block;
     padding: 8px 12px;
-    margin-left:50px;
+    margin-left:44px;
     border-radius:4px !important;
 }
 .map_1{
@@ -612,6 +612,7 @@ h1.sliderText {
 
 .top1{
     margin-top: 15px;
+    padding: 24px;
 }
 
 .tel_text{
@@ -623,13 +624,13 @@ h1.sliderText {
 .add p{
     font-family: helvetica;
     font-size: 13px;
-    color: #7c7c7c;
+    color: #212221;
 }
 
 .add h4{
     font-family: helvetica;
     font-size: 20px;
-    color: #7c7c7c;
+    color: #12295d;
 }
 
 .s_icon1{
@@ -664,4 +665,18 @@ h1.sliderText {
 }
 #joinUSbtn:hover{
     color: #fff !important;
+}
+
+
+
+
+
+
+===================================
+.render_body{
+    font-family: Montserrat, sans-serif;
+    background-color: #ebeef3;
+    min-width: 330px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
