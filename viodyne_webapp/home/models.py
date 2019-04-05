@@ -16,8 +16,6 @@ class HomeSlider2(models.Model):
 	Name2 = models.CharField(max_length=120)
 	Text  = models.CharField(max_length=300)
 	Image = models.ImageField(upload_to='slider2/')
-	class Meta:
-		ordering = ('Name',)
 
 	def __str__(self):
 		return self.Name
