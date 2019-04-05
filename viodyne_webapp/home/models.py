@@ -5,6 +5,8 @@ from django.db import models
 class HomeSlider(models.Model):
 	Name = models.CharField(max_length=120)
 	Image =models.ImageField(upload_to='slider/')
+	class Meta:
+		ordering = ('Name',)
 
 	def __str__(self):
 		return self.Name
@@ -14,6 +16,8 @@ class HomeSlider2(models.Model):
 	Name2 = models.CharField(max_length=120)
 	Text  = models.CharField(max_length=300)
 	Image = models.ImageField(upload_to='slider2/')
+	class Meta:
+		ordering = ('Name',)
 
 	def __str__(self):
 		return self.Name
@@ -21,7 +25,8 @@ class HomeSlider2(models.Model):
 class Homeslide3(models.Model):
 	Name  = models.CharField(max_length=120)
 	Image = models.ImageField(upload_to='slider3/')
-
+	class Meta:
+		ordering = ('Name',)
 	def __str__(self):
 		return self.Name
 
@@ -31,6 +36,8 @@ class ContactUs(models.Model):
 	TELEPHONE = models.CharField(max_length=120)
 	EMAIL	  = models.EmailField(max_length=120)
 	MESSAGE   = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('NAME',)
 
 	def __str__(self):
 		return self.NAME
@@ -41,6 +48,8 @@ class JoinUs(models.Model):
 	TELEPHONE  = models.CharField(max_length=120)
 	EMAIL	   = models.EmailField(max_length=120)
 	MESSAGE    = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('FIRST_NAME',)
 
 	def __str__(self):
 		return self.FIRST_NAME

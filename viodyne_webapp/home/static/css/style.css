@@ -369,7 +369,7 @@ ul.social li a {
     width: 70px;
     display: inline-block;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 16px;
     -webkit-clip-path: polygon(50% 30%, 100% 60%, 100% 100%, 0 100%, 0 60%);
     position: absolute;
     left: 50%;
