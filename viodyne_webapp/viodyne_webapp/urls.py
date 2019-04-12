@@ -26,6 +26,7 @@ urlpatterns = [
     path('contact-us/', home.views.contactus, name='contactus'),
     path('join-us/', home.views.joinus, name='joinus'),
     path('successview', home.views.successview, name='successview'),
+    path('products/', home.views.products, name='products'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -51,3 +51,29 @@ class JoinUs(models.Model):
 
 	def __str__(self):
 		return self.FIRST_NAME
+
+class HomeS1(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class HomeS2(models.Model):
+	Name  = models.CharField(max_length=120)
+	Name2 = models.CharField(max_length=120)
+	Text  = models.CharField(max_length=300)
+	Image = models.ImageField(upload_to='s2/')
+
+	def __str__(self):
+		return self.Name
+
+class Homes3(models.Model):
+	Name  = models.CharField(max_length=120)
+	Image = models.ImageField(upload_to='s3/')
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+		return self.Name
