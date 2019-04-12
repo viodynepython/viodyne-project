@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs
+from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3
 from .forms import ContactForm, JoinUsForm
 # Create your views here.
 def index(request):
@@ -11,6 +11,13 @@ def index(request):
 
 def aboutus(request):
 	return  render(request, 'home/about.html')
+
+def products(request):
+	s1  = HomeS1.objects
+	s2 = HomeS2.objects
+	s3 = Homes3.objects
+
+	return  render(request, 'home/products.html',{'s1s':s1,'s2s':s2,'s3s':s3})
 
 def contactus(request):
 	if request.method == 'POST':
