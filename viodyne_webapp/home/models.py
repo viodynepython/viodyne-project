@@ -84,6 +84,6 @@ class AboutUs(models.Model):
 	Comment   = models.CharField(max_length=300)
 	class Meta:
 		ordering = ('Name',)
-
 	def __str__(self):
+
 		return self.Name
