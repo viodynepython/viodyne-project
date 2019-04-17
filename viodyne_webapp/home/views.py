@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3
-from .forms import ContactForm, JoinUsForm
+from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3, AboutUs
+from .forms import ContactForm, JoinUsForm, AboutForm
+
 # Create your views here.
 def index(request):
 	slider  = HomeSlider.objects
@@ -10,7 +11,26 @@ def index(request):
 	return render(request, 'home/index.html',{'sliders':slider,'sliders2':slider2,'sliders3':slider3})
 
 def aboutus(request):
-	return  render(request, 'home/about.html')
+		if request.method == 'POST':
+			form = AboutForm(request.POST)
+			print(form.errors)
+			name = request.POST.get('Name', '')
+			email = request.POST.get('Email', '')
+			comment = request.POST.get('Comment', '')
+			if form.is_valid():
+				p = AboutUs(Name=name, Email=email, Comment=comment)
+				p.save()
+				return redirect('successview')
+			else:
+				form = AboutForm()
+		return render(request, 'home/about.html', {'form': AboutForm})
+
+def products(request):
+	s1  = HomeS1.objects
+	s2 = HomeS2.objects
+	s3 = Homes3.objects
+
+	return  render(request, 'home/products.html',{'s1s':s1,'s2s':s2,'s3s':s3})
 
 def products(request):
 	s1  = HomeS1.objects

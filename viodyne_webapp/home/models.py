@@ -9,7 +9,7 @@ class HomeSlider(models.Model):
 		ordering = ('Name',)
 
 	def __str__(self):
-		return self.Name
+	    return self.Name
 
 class HomeSlider2(models.Model):
 	Name  = models.CharField(max_length=120)
@@ -18,7 +18,7 @@ class HomeSlider2(models.Model):
 	Image = models.ImageField(upload_to='slider2/')
 
 	def __str__(self):
-		return self.Name
+	    return self.Name
 
 class Homeslide3(models.Model):
 	Name  = models.CharField(max_length=120)
@@ -26,7 +26,7 @@ class Homeslide3(models.Model):
 	class Meta:
 		ordering = ('Name',)
 	def __str__(self):
-		return self.Name
+	    return self.Name
 
 class ContactUs(models.Model):
 	NAME      = models.CharField(max_length=120)
@@ -38,7 +38,7 @@ class ContactUs(models.Model):
 		ordering = ('NAME',)
 
 	def __str__(self):
-		return self.NAME
+	    return self.NAME
 
 class JoinUs(models.Model):
 	FIRST_NAME = models.CharField(max_length=120)
@@ -50,7 +50,7 @@ class JoinUs(models.Model):
 		ordering = ('FIRST_NAME',)
 
 	def __str__(self):
-		return self.FIRST_NAME
+            return self.FIRST_NAME
 
 class HomeS1(models.Model):
 	Name = models.CharField(max_length=120)
@@ -59,7 +59,7 @@ class HomeS1(models.Model):
 		ordering = ('Name',)
 
 	def __str__(self):
-		return self.Name
+	    return self.Name
 
 class HomeS2(models.Model):
 	Name  = models.CharField(max_length=120)
@@ -68,7 +68,7 @@ class HomeS2(models.Model):
 	Image = models.ImageField(upload_to='s2/')
 
 	def __str__(self):
-		return self.Name
+	    return self.Name
 
 class Homes3(models.Model):
 	Name  = models.CharField(max_length=120)
@@ -76,4 +76,13 @@ class Homes3(models.Model):
 	class Meta:
 		ordering = ('Name',)
 	def __str__(self):
-		return self.Name
+	    	return self.Name
+
+class AboutUs(models.Model):
+	Name      = models.CharField(max_length=120)
+	Email	  = models.EmailField(max_length=120)
+	Comment   = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+	    return self.Name
