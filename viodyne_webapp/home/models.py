@@ -77,3 +77,13 @@ class Homes3(models.Model):
 		ordering = ('Name',)
 	def __str__(self):
 		return self.Name
+
+class AboutUs(models.Model):
+	Name      = models.CharField(max_length=120)
+	Email	  = models.EmailField(max_length=120)
+	Comment   = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+
+		return self.Name

@@ -61,16 +61,165 @@
                     <a href={% url 'index' %}>Home</a>
                   </li>
                   <li>
-                    <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
+                    <div class="dropdown">
+                      <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
+                      <div class="dropdown-content">
+                         
+                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Company Overview</p></a>
+                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Quality Management System</p></a>
+                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Our Mission</p></a>
+                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Our Vision</p></a>
+                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Testimonials</p></a>
+                      
+                      <i class="fa fa-close sac"></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a href={% url 'products' %}>Products <span class="caret"></span></a>
+                    <div class="dropdown1">
+                      <a href={% url 'products' %}>Products <span class="caret"></span></a>
+                      <div class="dropdown1-content">
+                      
+                      <div class="container-fluid">
+                        <div class="row">
+                            <h2 class="dubey">Products Overview</h2>
+                            <div class="fafa">
+                                <i class="fa fa-angle-left border1"></i>
+                                <i class="fa fa-angle-right border2"></i>
+                                <i class="fa fa-close border3"></i>
+                              </div>   
+                          <div class="col-md-5">
+                              <div class="col-md-6">
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                       <span>Body Cooling and Heating ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span>Low Vision Assistive Technology ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span> Medical Equipment ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span>Rapid Diagnostic Tests ></span>
+                                  </div>
+                                  
+                                </div>
+
+                              <div class="col-md-6">
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span> Smart Glasses ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span>Sterile Processing Supplies ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span>Surgical Instruments ></span>
+                                  </div>
+                                  <div class="body_text">
+                                      <img src="{% static 'images/body.jpg' %}" alt="">
+                                      <span> Surgical Sutures ></span>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          
+                          <div class="col-md-7">
+                            <div class="">
+                             
+                                
+                               
+                                  
+                                    <div class="col-md-3 img_1">
+                                        <a href="#"><img src="{% static 'images/body.jpg' %} "><p class="content_text1">Body Cooling and Heating</p></a>
+                                    </div>
+                                    <div class="col-md-3 img_1">
+                                        <a href="#"><img src="{% static 'images/Low_Vision_Assistive_Technology.png' %} "><p class="content_text1">Low Vision Assistive Technology</p></a>
+                                    </div>
+                                    <div class="col-md-3 img_1">
+                                        <a href="#"><img src="{% static 'images/Medical_Devices.png' %} "><p class="content_text1">Medical Equipment</p></a>
+                                    </div>
+                                    <div class="col-md-3 img_1">
+                                        <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Rapid Diagnostic Tests</p></a>  
+                                    </div>
+                                                         
+                            </div>
+                            <div class="">
+                                <div class="col-md-3 img_1">
+                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Smart Glasses</p></a>
+                                </div>
+                                <div class="col-md-3 img_1">
+                                    <a href="#"><img src="{% static 'images/Sterile_Processing_Supplies.png' %} "><p class="content_text1">Sterile Processing Supplies</p></a>
+                                </div>
+                                <div class="col-md-3 img_1">
+                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Surgical Instruments</p></a>
+                                </div>
+                                <div class="col-md-3 img_1">
+                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Surgical Sutures</p></a>  
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                            <div class="row ">
+                              
+                            </div>
+                          
+                        
+                      </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown">
+                      <a href="#">Specialties <span class="caret"></span></a>
+                      <div class="dropdown-content">
+                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Central Sterile Supply</p></a>
+                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Logistics and Storage</p></a>
+                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Operating Suite</p></a>
+                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Ophthalmology</p></a>
+                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p1">Sports Therapy <br>and Performace</p></a>
+                          
+                          <i class="fa fa-close sac"></i>
+                      </div>
+                    </div>
+
                   </li>
                   <li>
                     <a href="#">Knowledge Library</a>
                   </li>
                   <li>
-                    <a href={% url 'joinus' %}>Join Our Network <span class="caret"></span></a>
+                    <div class="dropdown2">
+                      <a href={% url 'joinus' %}>Join Our Network <span class="caret"></span></a>
+                      <div class="dropdown2-content">
+                      
+                      <div class="container-fluid">
+                        <div class="fafa1">
+                          <i class="fa fa-close border3"></i>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="jus">
+                            <a href="#"><img src="{% static 'images/Become_a_CSSD_Distributor.png' %} "></a>
+                            <span>Become a Viodyne Sterile Processing <br>Supplies Distributor</span>
+                          </div>
+                        </div>
+                        
+                          <div class="col-md-6">
+                              <div class="jus1">
+                            <a href="#"><img src="{% static 'images/JoinOurTeam.jpg' %} "></a>
+                            <span>Join Our Team</span>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
                   </li>
                   <li>
                     <a href={% url 'contactus' %}>Contact Us</a>
