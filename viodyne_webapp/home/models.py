@@ -76,7 +76,7 @@ class Homes3(models.Model):
 	class Meta:
 		ordering = ('Name',)
 	def __str__(self):
-	    return self.Name
+	    	return self.Name
 
 class AboutUs(models.Model):
 	Name      = models.CharField(max_length=120)
