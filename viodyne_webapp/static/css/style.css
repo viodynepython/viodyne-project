@@ -45,7 +45,7 @@ span#navTotal {
 }
 
 .cart_bt p {
-    color: #e81f1f;
+    color: #173374;
     font-weight: 700;
     font-size: 13px;
     margin-bottom: 0;
@@ -276,11 +276,12 @@ a.leftLst i.fa.fa-angle-left {
 .viodyneBoxInner img {
     width: 100%;
     border: 1px solid #000;
+    margin-top: 20px !important;
 }
 
 .viodyneBoxes {
     padding-top: 30px;
-        overflow: hidden;
+    overflow: hidden;
 }
 
 .viodyneBoxInnerTitle {
@@ -368,7 +369,7 @@ ul.social li a {
     width: 70px;
     display: inline-block;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 16px;
     -webkit-clip-path: polygon(50% 30%, 100% 60%, 100% 100%, 0 100%, 0 60%);
     position: absolute;
     left: 50%;
@@ -595,7 +596,7 @@ h1.sliderText {
 }
 .btn1{display: inline-block;
     padding: 8px 12px;
-    margin-left:50px;
+    margin-left:44px;
     border-radius:4px !important;
 }
 .map_1{
@@ -612,6 +613,7 @@ h1.sliderText {
 
 .top1{
     margin-top: 15px;
+    padding: 24px;
 }
 
 .tel_text{
@@ -623,13 +625,13 @@ h1.sliderText {
 .add p{
     font-family: helvetica;
     font-size: 13px;
-    color: #7c7c7c;
+    color: #212221;
 }
 
 .add h4{
     font-family: helvetica;
     font-size: 20px;
-    color: #7c7c7c;
+    color: #12295d;
 }
 
 .s_icon1{
@@ -665,3 +667,9 @@ h1.sliderText {
 #joinUSbtn:hover{
     color: #fff !important;
 }
+
+
+
+
+
+
