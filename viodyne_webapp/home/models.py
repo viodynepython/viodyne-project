@@ -85,5 +85,4 @@ class AboutUs(models.Model):
 	class Meta:
 		ordering = ('Name',)
 	def __str__(self):
-
 		return self.Name
