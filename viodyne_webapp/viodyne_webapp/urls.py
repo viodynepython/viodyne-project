@@ -27,6 +27,7 @@ urlpatterns = [
     path('join-us/', home.views.joinus, name='joinus'),
     path('successview', home.views.successview, name='successview'),
     path('products/', home.views.products, name='products'),
+    path('knowledge-library/', home.views.knowledge, name='knowledge'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

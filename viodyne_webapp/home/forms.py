@@ -34,16 +34,16 @@ class ContactForm(forms.Form):
         }
     ))
 class JoinUsForm(forms.Form):
-    FIRST_NAME = forms.CharField(widget=forms.TextInput(
+    NAME = forms.CharField(widget=forms.TextInput(
         attrs={
         'class':'form-control',
-        'placeholder':'First Name'
+        'placeholder':'Name'
         }
     ))
-    LAST_NAME = forms.CharField(widget=forms.TextInput(
+    COMPANY = forms.CharField(widget=forms.TextInput(
         attrs={
         'class':'form-control',
-        'placeholder':'Last Name'
+        'placeholder':'Company'
         }
     ))
     TELEPHONE = forms.IntegerField(widget=forms.TextInput(
