@@ -31,6 +31,10 @@ def products(request):
 
 	return  render(request, 'home/products.html',{'s1s':s1,'s2s':s2,'s3s':s3})
 
+def knowledge(request):
+		return render(request, 'home/knowledge-library.html')
+
+
 def contactus(request):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
@@ -53,18 +57,18 @@ def joinus(request):
 	if request.method == 'POST':
 		form = JoinUsForm(request.POST)
 		print(form.errors)
-		first_name = request.POST.get('FIRST_NAME', '')
+		name = request.POST.get('NAME', '')
 		email = request.POST.get('EMAIL', '')
-		last_name = request.POST.get('LAST_NAME', '')
+		company = request.POST.get('COMPANY', '')
 		phone = request.POST.get('TELEPHONE', '')
 		msg = request.POST.get('MESSAGE', '')
 		if form.is_valid():
-			p = JoinUs(FIRST_NAME=first_name, LAST_NAME=last_name, TELEPHONE=phone, EMAIL=email, MESSAGE=msg)
+			p = JoinUs(NAME=name, COMPANY=company, TELEPHONE=phone, EMAIL=email, MESSAGE=msg)
 			p.save()
 			return redirect('successview')
 		else:
 			form = JoinUsForm()
-	return render(request, 'home/joinus.html', {'form': JoinUsForm})
+	return render(request, 'home/join-our-team.html', {'form': JoinUsForm})
 
 def successview(request):
 	return  render(request, 'home/thanks.html')
