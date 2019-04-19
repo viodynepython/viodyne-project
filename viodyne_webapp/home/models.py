@@ -41,16 +41,17 @@ class ContactUs(models.Model):
 	    return self.NAME
 
 class JoinUs(models.Model):
-	FIRST_NAME = models.CharField(max_length=120)
-	LAST_NAME  = models.CharField(max_length=120)
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
 	TELEPHONE  = models.CharField(max_length=120)
 	EMAIL	   = models.EmailField(max_length=120)
 	MESSAGE    = models.CharField(max_length=300)
+	IMAGE 	   = models.ImageField(upload_to='joinus', blank=True)
 	class Meta:
-		ordering = ('FIRST_NAME',)
+		ordering = ('NAME',)
 
 	def __str__(self):
-            return self.FIRST_NAME
+		  return self.NAME
 
 class HomeS1(models.Model):
 	Name = models.CharField(max_length=120)
