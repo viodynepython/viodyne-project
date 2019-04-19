@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3, AboutUs
 from .forms import ContactForm, JoinUsForm, AboutForm
+
 # Create your views here.
 def index(request):
 	slider  = HomeSlider.objects
@@ -33,7 +34,6 @@ def products(request):
 
 def knowledge(request):
 		return render(request, 'home/knowledge-library.html')
-
 
 def contactus(request):
 	if request.method == 'POST':

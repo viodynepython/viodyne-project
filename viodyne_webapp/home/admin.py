@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3, AboutUs
+
 
 # Register your models here.
 admin.site.register(HomeSlider)
