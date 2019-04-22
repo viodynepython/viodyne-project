@@ -50,7 +50,7 @@ def contactus(request):
 			return redirect('successview')
 		else:
 			form = ContactForm()
-	return render(request, 'home/form1.html', {'form': ContactForm})
+	return render(request, 'home/contactus.html', {'form': ContactForm})
 
 
 def joinus(request):

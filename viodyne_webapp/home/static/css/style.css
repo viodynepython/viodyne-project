@@ -113,7 +113,7 @@ span#navTotal {
 .bg_Gradient {
     background: linear-gradient(to bottom,#12295d , #3878ae) !important;
     border: 0 !important;
-        border-radius: 0px !important;
+    border-radius: 5px !important;
 }
 
 .bottom-header .navbar-inverse .navbar-nav>li>a {
