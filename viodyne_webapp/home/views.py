@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, HomeS1, HomeS2, Homes3, AboutUs, AboutUsSlider, SpecialtiesSlider, JoinUsSlider, ProductSlider, ProductSlider1
 from .forms import ContactForm, JoinUsForm, AboutForm
+
 # Create your views here.
 dropdown = AboutUsSlider.objects.all()[0:5]
 dropdown1 = SpecialtiesSlider.objects.all()[0:5]
@@ -40,7 +41,6 @@ def products(request):
 
 def knowledge(request):
 		return render(request, 'home/knowledge-library.html', {'aboutusdropdown' : dropdown,  'specialtiesdropdown' : dropdown1, 'joinusdropdown' : dropdown2, 'productdropdown' : dropdown3,  'product1dropdown' : dropdown4})
-
 
 def contactus(request):
 	if request.method == 'POST':

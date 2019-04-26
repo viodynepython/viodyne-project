@@ -93,7 +93,7 @@
             <li class="dropdown mega-dropdown">
             <a href={% url 'products' %}>Products <span class="caret"></span></a> 				
 				<ul class="dropdown-menu mega-dropdown-menu">
-
+          
             <div class="container-fluid">
                 <div class="col-md-5">{% for dropdown4 in product1dropdown.all %}
                                     <div class="col-md-6">
@@ -102,7 +102,7 @@
                                              <span>{{ dropdown4.Name }} &gt;</span>
                                         </div>                                        
                                       </div>
-                                    {% endfor %} </div>
+                                    {% endfor %} </div>         
 
                      <li class="col-sm-7 pad5">
                   <ul>   
@@ -113,6 +113,7 @@
                               <a href="#"><img class="pimg" src="{{ dropdown3.Image.url }}" class="img-responsive" alt="product 1"></a>
                               <p class="slider_text">{{ dropdown3.Name }}</p>
                               </div>
+
 
                               </div> 
                               <!-- <div class="item">
