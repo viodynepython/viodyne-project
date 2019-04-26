@@ -8,6 +8,11 @@
     {% block title %}<title>Home</title>{% endblock %}
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -41,197 +46,154 @@
           </div>
         </div>
       </div>
-      <div class="bottom-header">
-        <nav class="navbar navbar-inverse bg_Gradient">
-          <div class="container-fluid">
-            <div class="col-md-12">
-              <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
+        
+<!-- <html>
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-              </div>
-
-              <div class="collapse navbar-collapse js-navbar-collapse">
-                <ul class="nav navbar-nav MoNavber">
-                  <li>
-                    <a href={% url 'index' %}>Home</a>
-                  </li>
-                  <li>
-                    <div class="dropdown">
-                      <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
-                      <div class="dropdown-content">
-                         
-                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Company Overview</p></a>
-                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Quality Management System</p></a>
-                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Our Mission</p></a>
-                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Our Vision</p></a>
-                      <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Testimonials</p></a>
-                      
-                      <i class="fa fa-close sac"></i>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                  
-                    <div class="dropdown1">
-                      <a href={% url 'products' %}>Products <span class="caret"></span></a>
-                      <div class="dropdown1-content">
-                      
-                      <div class="container-fluid">
-                        <div class="row">
-                            <h2 class="dubey">Products Overview</h2>
-                            <div class="fafa">
-                                <i class="fa fa-angle-left border1"></i>
-                                <i class="fa fa-angle-right border2"></i>
-                                <i class="fa fa-close border3"></i>
-                              </div>   
-                          <div class="col-md-5">
-                              <div class="col-md-6">
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                       <span>Body Cooling and Heating ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span>Low Vision Assistive Technology ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span> Medical Equipment ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span>Rapid Diagnostic Tests ></span>
-                                  </div>
-                                  
-                                </div>
-
-                              <div class="col-md-6">
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span> Smart Glasses ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span>Sterile Processing Supplies ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span>Surgical Instruments ></span>
-                                  </div>
-                                  <div class="body_text">
-                                      <img src="{% static 'images/body.jpg' %}" alt="">
-                                      <span> Surgical Sutures ></span>
-                                  </div>
-                              </div>
-                          </div>
-                          
-                          
-                          <div class="col-md-7">
-                            <div class="">
-                             
-                                
-                               
-                                  
-                                    <div class="col-md-3 img_1">
-                                        <a href="#"><img src="{% static 'images/body.jpg' %} "><p class="content_text1">Body Cooling and Heating</p></a>
-                                    </div>
-                                    <div class="col-md-3 img_1">
-                                        <a href="#"><img src="{% static 'images/Low_Vision_Assistive_Technology.png' %} "><p class="content_text1">Low Vision Assistive Technology</p></a>
-                                    </div>
-                                    <div class="col-md-3 img_1">
-                                        <a href="#"><img src="{% static 'images/Medical_Devices.png' %} "><p class="content_text1">Medical Equipment</p></a>
-                                    </div>
-                                    <div class="col-md-3 img_1">
-                                        <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Rapid Diagnostic Tests</p></a>  
-                                    </div>
-                                                         
-                            </div>
-                            <div class="">
-                                <div class="col-md-3 img_1">
-                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Smart Glasses</p></a>
-                                </div>
-                                <div class="col-md-3 img_1">
-                                    <a href="#"><img src="{% static 'images/Sterile_Processing_Supplies.png' %} "><p class="content_text1">Sterile Processing Supplies</p></a>
-                                </div>
-                                <div class="col-md-3 img_1">
-                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Surgical Instruments</p></a>
-                                </div>
-                                <div class="col-md-3 img_1">
-                                    <a href="#"><img src="{% static 'images/OperatingSuite.jpg' %} "><p class="content_text1">Surgical Sutures</p></a>  
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                            <div class="row ">
-                              
-                            </div>
-                          
-                        
-                      </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="dropdown">
-                      <a href="#">Specialties <span class="caret"></span></a>
-                      <div class="dropdown-content">
-                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Central Sterile Supply</p></a>
-                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Logistics and Storage</p></a>
-                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Operating Suite</p></a>
-                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p">Ophthalmology</p></a>
-                          <a href="#"><img src="{% static 'images/CompanyOverview.jpg' %} "><p class="content_p1">Sports Therapy <br>and Performace</p></a>
-                          
-                          <i class="fa fa-close sac"></i>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="{% url 'knowledge' %}">Knowledge Library</a>
-                  </li>
-                  <li>
-                    <div class="dropdown2">
-                      <a href={% url 'joinus' %}>Join Our Network <span class="caret"></span></a>
-                      <div class="dropdown2-content">
-                      
-                      <div class="container-fluid">
-                        <div class="fafa1">
-                          <i class="fa fa-close border3"></i>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="jus">
-                            <a href="#"><img src="{% static 'images/Become_a_CSSD_Distributor.png' %} "></a>
-                            <span>Become a Viodyne Sterile Processing <br>Supplies Distributor</span>
-                          </div>
-                        </div>
-                        
-                          <div class="col-md-6">
-                              <div class="jus1">
-                            <a href="#"><img src="{% static 'images/JoinOurTeam.jpg' %} "></a>
-                            <span>Join Our Team</span>
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a href={% url 'contactus' %}>Contact Us</a>
-                  </li>
-
-                </ul>
-                </div><!-- /.nav-collapse -->
-              </div>
+</head> -->
+<!-- <body> -->
+<!-- <div class="container-fluid">
+ -->
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+    	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<!-- <a class="navbar-brand" href="#">Home</a> -->
+	</div>
+	
+	<div class="collapse navbar-collapse js-navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li><a href={% url 'index' %}>Home</a></li>
+			<li class="dropdown mega-dropdown">
+        <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a> 				
+				<ul class="dropdown-menu mega-dropdown-menu">
+					
+					<div class="container-fluid">
+            {% for dropdown in aboutusdropdown.all %}
+						<div class="col-md-2 pad5"><a href="#"> <img class="aimg" src="{{ dropdown.Image.url }}"></a><p class="content_p">{{ dropdown.Name }}</p></div>
+						{% endfor %}<div class="col-md-2 ">
+              <div class="fa_close">
+                <i class="fa fa-window-close"></i>
+              </div>   
             </div>
-          </nav>
+					
+				</div>		
+				</ul>				
+			</li>
+            <li class="dropdown mega-dropdown">
+            <a href={% url 'products' %}>Products <span class="caret"></span></a> 				
+				<ul class="dropdown-menu mega-dropdown-menu">
+
+            <div class="container-fluid">
+                <div class="col-md-5">{% for dropdown4 in product1dropdown.all %}
+                                    <div class="col-md-6">
+                                        <div class="body_text">
+                                            <img src="{{ dropdown4.Image.url }}" alt="">
+                                             <span>{{ dropdown4.Name }} &gt;</span>
+                                        </div>                                        
+                                      </div>
+                                    {% endfor %} </div>
+
+                     <li class="col-sm-7 pad5">
+                  <ul>   
+                              <div id="womenCollection" class="carousel slide" data-ride="carousel">
+                              <div class="carousel-inner">{% for dropdown3 in productdropdown.all %}
+                              <div class="item active">
+                              <div class="col-md-3">
+                              <a href="#"><img class="pimg" src="{{ dropdown3.Image.url }}" class="img-responsive" alt="product 1"></a>
+                              <p class="slider_text">{{ dropdown3.Name }}</p>
+                              </div>
+
+                              </div> 
+                              <!-- <div class="item">
+                            </div>  -->
+                              {% endfor %} </div>
+                               <!-- End Carousel Inner -->
+                              <!-- Controls -->
+                              <a class="left carousel-control" href="#womenCollection" role="button" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="right carousel-control" href="#womenCollection" role="button" data-slide="next">
+                              
+                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                              <span class="close_icone"><i class="fa fa-window-close"></i></span>
+                              <span class="sr-only">Next</span>
+                              
+                              </a>
+                              </div><!-- /.carousel -->
+                              <!-- <li class="divider"></li> -->
+                              
+</ul>
+</li>
         </div>
-      </header>
+				</ul>				
+			</li>
+            
+            <li class="dropdown mega-dropdown">
+              <a href="#">Specialties <span class="caret"></span></a>				
+				<ul class="dropdown-menu mega-dropdown-menu">
+					
+					<div class="container-fluid">
+            {% for dropdown1 in specialtiesdropdown.all %}
+						<div class="col-md-2 pad5"><a href="#"> <img class="aimg" src="{{ dropdown1.Image.url }}"></a><p class="content_p1">{{ dropdown1.Name }}</p></div>
+						{% endfor %}<div class="col-md-2">
+              <div class="fa_close">
+                <i class="fa fa-window-close"></i>
+              </div>      
+            </div>
+					
+				</div>		
+				</ul>				
+			</li>
+			<li><a href={% url 'knowledge' %}>Knowledge Library</a></li>
+			 <li class="dropdown mega-dropdown">
+				<a href={% url 'joinus' %}>Join Our Network <span class="caret"></span></a>			
+				<ul class="dropdown-menu mega-dropdown-menu">
+					
+					<div class="container">
+					<div class="row">
+              {% for dropdown2 in joinusdropdown.all %}
+						<div class="col-md-5">
+              <div class="col-md-5">
+                <div class="join_img1">
+							     <a href="#"><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                 </div>
+              </div>
+              <div class="col-md-7">
+                <div class="join_text">
+                 <p>{{ dropdown2.Name }}</p>
+                 </div>
+              </div>
+              
+						</div>{% endfor %}
+          <div class="col-md-2">
+              <div class="fa_close1">
+                <i class="fa fa-window-close"></i>
+              </div> 
+          </div>
+
+				</div>	
+        </div>	
+				</ul>				
+			</li>
+			<li><a href={% url 'contactus' %}>Contact Us</a></li>
+		</ul>
+	</div><!-- /.nav-collapse -->
+  </nav>
+<!-- </div> -->
+</body>
+</html>
       {% block content %}
       {% endblock %}
       <div class="footer">
@@ -295,7 +257,7 @@
                 <a href={% url 'joinus' %}>Join Us Form</a>
                <h5>Contact Us</h5>
                 <a href={% url 'contactus' %}>Contact Form</a>
-                 <a href="#">Contact Numbers</a>
+                 <a href={% url 'contactus' %}>Contact Numbers</a>
             </div>
           </div>
           </div>
@@ -353,5 +315,37 @@
       </script>
 
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+      <script type="text/javascript">$(document).ready(function(){
+        $(".dropdown").hover(            
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                $(this).toggleClass('open');        
+            },
+            function() {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                $(this).toggleClass('open');       
+            }
+        );
+    });</script>
+    <script>$(document).ready(function(){
+        $(".fa_close").click(function(){
+          $(".dropdown-menu").hide();
+        });
+        
+      });
+      </script>
+      <script>$(document).ready(function(){
+          $(".fa_close1").click(function(){
+            $(".dropdown-menu").hide();
+          });
+          
+        });</script>
+        <script>$(document).ready(function(){
+            $(".close_icone").click(function(){
+              $(".dropdown-menu").hide();
+            });
+            
+          });</script>
     </body>
   </html>

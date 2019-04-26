@@ -88,3 +88,48 @@ class AboutUs(models.Model):
 
 	def __str__(self):
 		return self.Name
+
+class AboutUsSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class SpecialtiesSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class JoinUsSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class ProductSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class ProductSlider1(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
