@@ -88,8 +88,8 @@ class AboutUs(models.Model):
 	def __str__(self):
 
 class AboutUsSlider(models.Model):
-	Name = models.CharField(max_length=120)
-	Image =models.ImageField(upload_to='s1/')
+	Name  = models.CharField(max_length=120)
+	Image = models.ImageField(upload_to='s1/')
 	class Meta:
 		ordering = ('Name',)
 
