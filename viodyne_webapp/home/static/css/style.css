@@ -57,7 +57,6 @@ span#navTotal {
         margin-bottom: 0;
 }
 
-/*megha menu start*/
 .mega-dropdown {
   position: static !important;
 }
@@ -173,7 +172,7 @@ h1.sliderText {
     width: 100%;
     position: relative;
 }
- .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
 .MultiCarousel .MultiCarousel-inner .item { float: left;}
 .MultiCarousel .MultiCarousel-inner .item > div { text-align: center;     margin: 0 32px; color:#666;}
 .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
@@ -332,7 +331,7 @@ ul.social {
 ul.social li {
     list-style: none;
     display: inline-block;
-    padding: 6px 20px 15px 0;
+    padding: 6px 2px 15px 0;
 }
 
 ul.social li img {
@@ -943,4 +942,32 @@ span.close_icone .fa {
 /* Header End */
 .viodyneBoxInner {
     margin-left: -7px;
+}
+
+@media screen and (max-width: 600px) {
+  .bg-no-overlay{
+    padding-left: 0px!important;
+  }
+
+}
+ul.social {
+    padding: 0;
+    margin-left: -16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-inverse .navbar-nav>li>a {
+    /* background: linear-gradient(to bottom,#12295d , #3878ae) !important; */
+    background-color: #244f84 !important;
+    z-index: 1 !important;
+    width: 414px !important;
+    margin-left: -44px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    /* border-color: #101010; */
+    width: 88%;
+    margin: auto;
+}
+
 }
