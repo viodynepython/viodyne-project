@@ -1,0 +1,101 @@
+{% extends "home/header.html" %}>
+<!-- Home slider -->
+{% block content %}
+{% load static %}
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <h2>Quote Request cart</h2>
+    </div>
+
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>                  
+                  <th scope="col">Image</th>
+                  <th scope="col">Item No.</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Remove</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>SRT-200100</td>
+                  <td>200mm x 100m</td>
+                  <td>Cell</td>
+                  <td> 
+                      <i class="fa fa-window-close"></i>
+                      </td>                  
+                </tr>             
+                
+              </tbody>
+            </table>
+          </div>
+    </div>
+    <div class="row">
+
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+
+        
+        <form role="form" action="" method="POST" style="margin-right: 0px;">
+          {% csrf_token %}
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Name"><span style="color: #f70611;">* </span>Name</label>
+              {{ form.NAME }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Company">Company</label>
+              {{ form.COMPANY }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Telephone">Telephone</label>
+              {{ form.TELEPHONE }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Email"><span style="color: #f70611;">* </span>Email</label>
+              {{ form.EMAIL }}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="Message"><span style="color: #f70611;">* </span>Message</label>
+              {{ form.MESSAGE }}
+            </div>
+          </div>                
+        </form>
+      </div>
+   
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+        <br>
+      <div class="row text-center">        
+          <div class="col-md-12 col-xs-12">
+            <div class="google-captcha">
+              <img src="{% static 'images/google-captcha.png' %}">
+            </div>
+          </div>                
+      </div>
+
+      <div class="row text-center">
+          <div class="col-md-12 col-xs-12">
+              <button type="submit" class="btn  bg_Gradient viodyneBtn maTop15" style="color:#fff!important;">Send Quote Request</button>
+            </div> 
+      </div>
+      <br>
+      </div>
+
+    </div> 
+  </div>  
+</div>
+
+{% endblock %}

@@ -45,7 +45,7 @@ span#navTotal {
 }
 
 .cart_bt p {
-    color: #e81f1f;
+    color: #173374;
     font-weight: 700;
     font-size: 13px;
     margin-bottom: 0;
@@ -148,6 +148,7 @@ h1.sliderText {
     font-weight: 700;
     text-shadow: 1px 1px 1px #000;
 }
+
 
 .itemSlider img {
     width: 100%;
@@ -276,11 +277,12 @@ a.leftLst i.fa.fa-angle-left {
 .viodyneBoxInner img {
     width: 100%;
     border: 1px solid #000;
+    margin-top: 20px !important;
 }
 
 .viodyneBoxes {
     padding-top: 30px;
-        overflow: hidden;
+    overflow: hidden;
 }
 
 .viodyneBoxInnerTitle {
@@ -368,7 +370,7 @@ ul.social li a {
     width: 70px;
     display: inline-block;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 16px;
     -webkit-clip-path: polygon(50% 30%, 100% 60%, 100% 100%, 0 100%, 0 60%);
     position: absolute;
     left: 50%;
@@ -469,9 +471,9 @@ ul.about-usUl li span {
     color: #333333;
 }
 
-section.about-us {
+/* section.about-us {
     margin-bottom: 30px;
-}
+} */
 
 li.testimonialsTab.active a {
       color: red !important;
@@ -553,6 +555,46 @@ h1.sliderText {
 
 }
 
+/* @media only screen and (max-width: 990px) {
+    .navbar-header {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block !important;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+} */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+}
 
 @media only screen and (max-width: 991px) {
 .viodyneBoxInner {
@@ -595,7 +637,7 @@ h1.sliderText {
 }
 .btn1{display: inline-block;
     padding: 8px 12px;
-    margin-left:39px;
+    margin-left:44px;
     border-radius:4px !important;
 }
 .map_1{
@@ -612,6 +654,7 @@ h1.sliderText {
 
 .top1{
     margin-top: 15px;
+    padding: 24px;
 }
 
 .tel_text{
@@ -623,13 +666,13 @@ h1.sliderText {
 .add p{
     font-family: helvetica;
     font-size: 13px;
-    color: #7c7c7c;
+    color: #212221;
 }
 
 .add h4{
     font-family: helvetica;
     font-size: 20px;
-    color: #7c7c7c;
+    color: #12295d;
 }
 
 .s_icon1{
@@ -662,4 +705,13 @@ h1.sliderText {
     r: white;
     color: white;
 }
+#joinUSbtn:hover{
+    color: #fff !important;
+}
+
+
+
+
+
+
 

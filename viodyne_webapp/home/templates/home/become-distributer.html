@@ -1,0 +1,107 @@
+{% extends "home/header.html" %}>
+      <!-- Home slider -->
+      {% block content %}
+      {% load static %}
+
+      <!-- Home slider -->
+      <div class="main-wrapper bg-gray">
+        <section class="about-us">
+          <div class="container bg-white">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="breadcrumb_panel">
+                  <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Join Our Network</a></li>
+                    <!-- <li><a href="#">Join Our Team</a></li> -->
+                    <li><a href="#">Become a Viodyne Sterile Processing Supplies Distributor
+                      </a></li>                    
+                  </ul>
+                </div>         
+              </div>
+            </div>
+            <div class="row">
+                <h2 class="page_headers" style="padding-left: 15px;">Become a Viodyne Sterile Processing Supplies Distributor</h2>
+            </div>
+            <div class="row">
+          
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">           
+                  
+                  <p style="color: #12295d; padding-left: 15px;">Viodyne Sterile Processing Supplies are primarily sold through authorized distributors.
+                      We are looking to appoint distributors in new territories to replicate the success we have with our current international partners.</p>
+                  <form role="form" action="" method="POST" style="margin-right: 0px;">
+                    {% csrf_token %}
+                    <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Name"><span style="color: #f70611;">* </span>Name</label>
+                        {{ form.NAME }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Company">Company</label>
+                        {{ form.COMPANY }}
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Telephone">Telephone</label>
+                        {{ form.TELEPHONE }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Email"><span style="color: #f70611;">* </span>Email</label>
+                        {{ form.EMAIL }}
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="Message"><span style="color: #f70611;">* </span>Message</label>
+                        {{ form.MESSAGE }}
+                      </div>
+                    </div>
+                    </div>
+                    <!-- <hr class="colorgraph"> -->
+                    <div class="row">
+                      <!-- <div class="col-xs-12 col-md-12"> -->
+                        <div class="col-md-6 col-xs-12">
+                          <div class="google-captcha">
+                            <img src="{% static 'images/google-captcha.png' %}">
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 viodyneBtnPrimery">
+                          <button type="submit" class="btn  bg_Gradient viodyneBtn maTop15">Send</button>
+                        </div>
+                      <!-- </div> -->
+                    </div>
+          
+                    
+                  </form>
+                </div>
+             
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                <div class="map_1">
+                  <!-- <div id="map_wrapper" style=" height: 400px;"> -->
+                    <!-- <div id="map" style=" width: 100%; height: 100%;">
+                    </div> -->
+                    <div class="">
+                    <img src="{% static 'images/Become_a_CSSD_Distributor.png' %}">
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+          
+            </div>
+          </div>
+         
+      </section>
+    </div>
+    {% endblock %}

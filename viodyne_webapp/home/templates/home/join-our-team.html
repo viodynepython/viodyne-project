@@ -1,0 +1,123 @@
+{% extends "home/header.html" %}>
+      <!-- Home slider -->
+      {% block content %}
+      {% load static %}
+
+      <!-- Home slider -->
+      <div class="main-wrapper bg-gray">
+        <section class="about-us">
+          <div class="container bg-white">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="breadcrumb_panel">
+                  <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Join Our Network</a></li>
+                    <li><a href="#">Join Our Team</a></li>
+                    <!-- <li><a href="#">Become a Viodyne Sterile Processing Supplies Distributor
+                      </a></li> -->
+                    
+                  </ul>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3 class="page_headers">Join Our Team</h3>
+                    <div class="col-md-3">
+                      
+                      <div class="joinOurTeamImg">
+                        <img src="{% static 'images/JoinOurTeam.jpg' %}" class="img-responsive img-rounded">
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="joinOurTeamDes">
+                        <p>Our people are our greatest asset.  They are the driving force behind our success.  We are always looking for passionate people who thrive on meeting the challenges of future generations.</p>
+                        <p>Our work is making a difference in the lives of many around the world.  Join our team.  Change lives and make a difference.</p>
+                      </div>
+                      <div class="formJoinOurTeam">
+                        <div class="formJoinOurTeamtext">Viodyne. <span>Working towards a healthier and better world.</span>
+                        <a class="btn btn-lg JoinOT_b bg_Gradient" id="joinUSbtn" data-target="#form_Container" data-toggle="collapse" aria-expanded="true">JOIN US!▼</span></a>
+                      </p>
+                      
+                      
+                      <div class="col-md-8 col-lg-8 col-md-push-2 col-sm-12 collapse" id="form_Container" aria-expanded="true">
+                        
+                        <p>We are looking to attract people who share our passion and vision.  If you are driven to make a difference, join us.  Send us your information, together we can make the impossible possible.</p>
+                        <div class="join-form">
+                            <form role="form" action="" method="POST">
+                            {% csrf_token %}
+                            <hr class="colorgraph">
+                            <div class="f">
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                  <label><span class="starReq">*</span> Name</label>
+                                  {{ form.NAME }}
+                                  <!-- <input type="text" name="name" id="name" class="form-control input-lg" placeholder="" tabindex="1"> -->
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                  <label><span class="starReq">*</span> Company</label>
+                                  {{ form.COMPANY }}
+                                  <!-- <input type="text" name="company" id="company" class="form-control input-lg" placeholder="" tabindex="2"> -->
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                  <label>Telephone</label>
+                                  {{ form.TELEPHONE }}
+                                  <!-- <input type="text" name="telephone" id="telephone" class="form-control input-lg" placeholder="" tabindex="3"> -->
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                  <label><span class="starReq">*</span> Email</label>
+                                  {{ form.EMAIL }}
+                                  <!-- <input type="text" name="email" id="email" class="form-control input-lg" placeholder="" tabindex="4"> -->
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                  <label>Select a file</label>                                 
+                                  <input type="file" name="selectfile" id="selectfile" class="file-select" placeholder="" tabindex="5"><img src="{{ image.IMAGE.url }}">
+                                  <p>Accepted file are pdf, doc, and docx with maximum size of 1 MB</p>
+                                </div>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                  <label><span class="starReq">*</span> Message</label>
+                                  {{ form.MESSAGE }}
+                                  <!-- <textarea class="form-control input-lg"></textarea> -->
+                                </div>
+                              </div>
+                            </div>
+                            <hr class="colorgraph">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12">
+                                <div class="col-md-6">
+                                  <div class="google-captcha">
+                                    <img src="{% static 'images/google-captcha.png' %}">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 viodyneBtnPrimery">
+                                  <button type="submit" class="btn  bg_Gradient viodyneBtn maTop15">Send</button>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </form>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+             
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    {% endblock %}

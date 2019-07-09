@@ -26,6 +26,12 @@ urlpatterns = [
     path('contact-us/', home.views.contactus, name='contactus'),
     path('join-us/', home.views.joinus, name='joinus'),
     path('successview', home.views.successview, name='successview'),
+    path('products/', home.views.products, name='products'),
+    path('knowledge-library/', home.views.knowledge, name='knowledge'),
+    path('become-distributer/', home.views.becomeDistributer, name='becomeDistributer'),
+    path('privacypolicy/', home.views.privacyPolicy, name='privacyPolicy'),
+    path('termcondition/', home.views.termCondition, name='termCondition'),
+    path('requestquote/', home.views.requestQuote, name='requestQoute')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
