@@ -42,7 +42,7 @@
               <input type="text" class="form-control" placeholder="Search" name="q">
               <!-- id="searchTxt" -->
               <div class="input-group-btn">
-                <a class="btn btn-default bg_Gradient" id="searchBtn" href="/ProductList/Products?key="><i
+                <a class="btn btn-default bg_Gradient" id="searchBtn" href="{% url 'products' %}"><i
                     class="glyphicon glyphicon-search"></i></a>
               </div>
             </div>
@@ -107,11 +107,11 @@
                 <li class="col-sm-7 pad5">
                   <ul>
                     <div id="womenCollection" class="carousel slide" data-ride="carousel" data-interval="false">
-                      <input type="hidden" value="{{productdropdown.all|length}}" id="hdnProductCount" />
+                      <input type="hidden" value="{{product1dropdown.all|length}}" id="hdnProductCount" />
                       <div class="carousel-inner"> 
-                      {% for dropdown3 in productdropdown.all %}
+                      {% for dropdown3 in product1dropdown.all %}
                      
-                          <div class="item group{{ dropdown3.Category_id }} ">
+                          <div class="item active">
                             <div class="col-md-3" >
                               <a href="#"><img class="pimg" src="{{ dropdown3.Image.url }}" class="img-responsive"
                                   alt="product 1"></a>
@@ -163,7 +163,7 @@
           </li>
           <li><a href={% url 'knowledge' %}>Knowledge Library</a></li>
           <li class="dropdown mega-dropdown">
-            <a href={% url 'joinus' %}>Join Our Network <span class="caret"></span></a>
+            <a href="#">Join Our Network <span class="caret"></span></a>
             <ul class="dropdown-menu mega-dropdown-menu">
 
               <div class="container">
@@ -172,12 +172,23 @@
                   <div class="col-md-5">
                     <!-- <div class="col-md-5"> -->
                     <div class="join_img1">
-                      <a href="#"><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                        {% if dropdown2.id == 1 %}
+                      <a href={% url 'becomeDistributer' %}><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                      {% endif %}
+                      {% if dropdown2.id == 2 %}
+                      <a href={% url 'joinus' %}><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                      {% endif %}
                     </div>
                     <!-- </div> -->
                     <div class="col-md-5">
                       <div class="join_text">
-                        <p>{{ dropdown2.Name }}</p>
+                          {% if dropdown2.id == 1 %}
+                          <a href={% url 'becomeDistributer' %}><p>{{ dropdown2.Name }}</p></a>
+                          {% endif %}
+                          {% if dropdown2.id == 2 %}
+                          <a href={% url 'joinus' %}><p>{{ dropdown2.Name }}</p> </a>
+                          {% endif %}
+                        
                       </div>
                     </div>
                   </div>

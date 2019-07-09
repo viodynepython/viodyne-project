@@ -86,13 +86,13 @@ DATABASES = {
 	'default': {'ENGINE':'django.db.backends.mysql',
            'NAME':'viodyne_webapp',
            'USER':'root',
-           'PASSWORD':'s',
-           'HOST':'localhost',
-           'PORT':''}
+           'PASSWORD':'login@123',    
+           'HOST':'127.0.0.1',
+           'PORT':'3306'}
 }
 
 
-
+#1v2n3C78
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

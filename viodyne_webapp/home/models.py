@@ -152,3 +152,15 @@ class ProductsList(models.Model):
 	def __str__(self):
 		return self.Name
 
+class BecomeDistributer(models.Model):
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+	IMAGE 	   = models.ImageField(upload_to='distributer', blank=True)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+		  return self.NAME
