@@ -33,14 +33,13 @@
         <div class="col-md-12">
           <div class="col-md-4">
             <div class="logo">
-              {% load static %}
-              <a href="/"><img src="{% static 'images/viodyne_logo.png' %} ">
+              <a href="#"><img src="{% static 'images/viodyne_logo.png' %} ">
             </div>
           </div>
           <div class="col-md-4 col-sm-4  col-xs-12">
             <div class="input-group divsearch">
+             
               <input type="text" class="form-control" placeholder="Search" name="q">
-              <!-- id="searchTxt" -->
               <div class="input-group-btn">
                 <a class="btn btn-default bg_Gradient" id="searchBtn" href="{% url 'products' %}"><i
                     class="glyphicon glyphicon-search"></i></a>

@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -114,23 +115,23 @@ class JoinUsSlider(models.Model):
 	def __str__(self):
 		return self.Name
 
-class ProductSlider(models.Model):
-	Name = models.CharField(max_length=120)
-	Image =models.ImageField(upload_to='s1/')
-	class Meta:
-		ordering = ('Name',)
+# class ProductSlider(models.Model):
+# 	Name = models.CharField(max_length=120)
+# 	Image =models.ImageField(upload_to='s1/')
+# 	class Meta:
+# 		ordering = ('Name',)
 
-	def __str__(self):
-		return self.Name
+# 	def __str__(self):
+# 		return self.Name
 
-class ProductSlider1(models.Model):
-	Name = models.CharField(max_length=120)
-	Image =models.ImageField(upload_to='s1/')
-	class Meta:
-		ordering = ('Name',)
+# class ProductSlider1(models.Model):
+# 	Name = models.CharField(max_length=120)
+# 	Image =models.ImageField(upload_to='s1/')
+# 	class Meta:
+# 		ordering = ('Name',)
 
-	def __str__(self):
-		return self.Name
+# 	def __str__(self):
+# 		return self.Name
 
 
 class ProductCategory(models.Model):
@@ -142,15 +143,33 @@ class ProductCategory(models.Model):
 	def __str__(self):
 		return self.Name
 
-class ProductsList(models.Model):
+class ProductSubCategory(models.Model):
 	Name = models.CharField(max_length=120)
-	Image =models.ImageField(upload_to='s1/')
 	Category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
 	class Meta:
 		ordering = ('Name',)
 
 	def __str__(self):
+		return self.Name		
+
+class ProductsList(models.Model):
+	Name = models.CharField(max_length=120)
+	unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
+	quantity=models.IntegerField(default=0)
+	SubCategory = models.ForeignKey(ProductSubCategory, on_delete=models.CASCADE)
+	# content=models.TextField(blank=True, null=True)
+	content= HTMLField(blank=True, null=True)
+
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
 		return self.Name
+
+class ProductImages(models.Model):
+	Category = models.ForeignKey(ProductsList, related_name='images', on_delete=models.CASCADE)
+	Image = models.ImageField(upload_to='ProductsImages/')
+												
 
 class BecomeDistributer(models.Model):
 	NAME       = models.CharField(max_length=120)

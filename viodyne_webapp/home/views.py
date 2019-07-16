@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, HttpResponse
 from .models import HomeSlider, HomeSlider2, Homeslide3, ContactUs, JoinUs, BecomeDistributer, HomeS1, HomeS2, Homes3, AboutUs, AboutUsSlider, SpecialtiesSlider, JoinUsSlider, ProductCategory, ProductsList
 from .forms import ContactForm, JoinUsForm, AboutForm, DistributerForm
 
+from cart.cart import Cart
+
+
 # Create your views here.
 aboutUsDd = AboutUsSlider.objects.all()[0:5]
 SpecialtiesDd = SpecialtiesSlider.objects.all()[0:5]
@@ -118,22 +121,23 @@ def requestQuote(request):
 			form = JoinUsForm()
 	return render(request, 'home/requestaquote.html', {'form': JoinUsForm, 'aboutusdropdown' : aboutUsDd,  'specialtiesdropdown' : SpecialtiesDd, 'joinusdropdown' : joinUsDd, 'productdropdown' : ProductsListDd,  'product1dropdown' : ProductCategoryDd})
 
-# def joinOurNetwork(request):
-# 	if request.method == 'POST':
-# 		form = JoinUsForm(request.POST)
-# 		print(form.errors)
-# 		name = request.POST.get('NAME', '')
-# 		email = request.POST.get('EMAIL', '')
-# 		company = request.POST.get('COMPANY', '')
-# 		phone = request.POST.get('TELEPHONE', '')
-# 		msg = request.POST.get('MESSAGE', '')
-# 		if form.is_valid():
-# 			p = JoinUs(NAME=name, COMPANY=company, TELEPHONE=phone, EMAIL=email, MESSAGE=msg)
-# 			p.save()
-# 			return redirect('successview')
-# 		else:
-# 			form = JoinUsForm()
-# 	return render(request, 'home/become-distributer.html', {'form': JoinUsForm, 'aboutusdropdown' : aboutUsDd,  'specialtiesdropdown' : SpecialtiesDd, 'joinusdropdown' : joinUsDd, 'productdropdown' : ProductsListDd,  'product1dropdown' : ProductCategoryDd})
+def add_to_cart(request, product_id, quantity):
+    product = ProductsList.objects.get(id=product_id)
+    cart = Cart(request)
+    cart.add(product, product.unit_price, quantity)
+	
+	
+
+	
+
+def remove_from_cart(request, product_id):
+    product = ProductsList.objects.get(id=product_id)
+    cart = Cart(request)
+    cart.remove(product)
+
+def get_cart(request):
+    return render(request, 'cart.html', {'cart': Cart(request)})
+
 
 def successview(request):
 	return  render(request, 'home/thanks.html', {'aboutusdropdown' : aboutUsDd,  'specialtiesdropdown' : SpecialtiesDd, 'joinusdropdown' : joinUsDd, 'productdropdown' : ProductsListDd,  'product1dropdown' : ProductCategoryDd})

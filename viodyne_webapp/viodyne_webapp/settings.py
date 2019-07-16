@@ -34,6 +34,8 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # 'django_mysql',
+    'cart',
+    'tinymce',
     'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',

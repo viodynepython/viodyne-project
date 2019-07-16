@@ -34,7 +34,9 @@ urlpatterns = [
     path('become-distributer/', home.views.becomeDistributer, name='becomeDistributer'),
     path('privacypolicy/', home.views.privacyPolicy, name='privacyPolicy'),
     path('termcondition/', home.views.termCondition, name='termCondition'),
-    path('requestquote/', home.views.requestQuote, name='requestQoute')
+    path('requestquote/', home.views.requestQuote, name='requestQoute'),
+    path('add-to-cart/<int:product_id>/<int:quantity>/', home.views.add_to_cart, name="addtocart"),
+    path(r'^tinymce/', include('tinymce.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
