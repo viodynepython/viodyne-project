@@ -29,14 +29,19 @@ urlpatterns = [
     path('contact-us/', home.views.contactus, name='contactus'),
     path('join-us/', home.views.joinus, name='joinus'),
     path('successview', home.views.successview, name='successview'),
-    path('products/', home.views.products, name='products'),
+    path('products/', home.views.index, name='products'),
+    
     path('knowledge-library/', home.views.knowledge, name='knowledge'),
     path('become-distributer/', home.views.becomeDistributer, name='becomeDistributer'),
     path('privacypolicy/', home.views.privacyPolicy, name='privacyPolicy'),
     path('termcondition/', home.views.termCondition, name='termCondition'),
     path('requestquote/', home.views.requestQuote, name='requestQoute'),
-    path('add-to-cart/<int:product_id>/<int:quantity>/', home.views.add_to_cart, name="addtocart"),
-    path(r'^tinymce/', include('tinymce.urls'))
+    path('add-to-cart/<int:product_id>/<int:quantity>/<int:pid>/', home.views.add_to_cart, name="addtocart"),
+    path('remove_from_cart/<int:product_id>/', home.views.remove_from_cart, name="removefromcart"),
+    path('tinymce/', include('tinymce.urls')),
+	path('viewProducts/<int:id>',home.views.viewProducts, name="viewProducts"),
+    path('products/viewProducts/<int:id>',home.views.viewProducts, name="viewProducts"),
+   path('getProduct/<int:id>',home.views.product.as_view(), name="getProduct"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -13,10 +13,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script
 
 
   {% load static %}
@@ -33,15 +31,16 @@
         <div class="col-md-12">
           <div class="col-md-4">
             <div class="logo">
-              <a href="#"><img src="{% static 'images/viodyne_logo.png' %} ">
+              {% load static %}
+              <a href="/"><img src="{% static 'images/viodyne_logo.png' %} ">
             </div>
           </div>
           <div class="col-md-4 col-sm-4  col-xs-12">
             <div class="input-group divsearch">
-             
               <input type="text" class="form-control" placeholder="Search" name="q">
+
               <div class="input-group-btn">
-                <a class="btn btn-default bg_Gradient" id="searchBtn" href="{% url 'products' %}"><i
+                <a class="btn btn-default bg_Gradient" id="searchBtn" href="/ProductList/Products?key="><i
                     class="glyphicon glyphicon-search"></i></a>
               </div>
             </div>
@@ -49,8 +48,14 @@
           <div class="col-md-4 col-sm-4 col-xs-12 cart_div">
             <div class="cart_bt">
               <p>Become a Distributor <br> Join Our Team</p>
-              <a href={% url 'requestQoute' %} id="navToggleCart"><span class="badge" id="navTotal"></span><span
-                  class="glyphicon glyphicon-shopping-cart"></span> Quote Request Cart</a>
+              <a href={% url 'requestQoute' %} id="navToggleCart">
+                <span class="badge" id="navTotal"></span>
+                {% if cart.count > 0  %}
+                <span class="badge" id="navTotal" style="padding:5px 7px;background-color:#c70909;">{{cart.count}}</span>
+                {% endif%}
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                  
+                   Quote Request Cart</a>
             </div>
           </div>
         </div>
@@ -67,20 +72,21 @@
         </button>
       </div>
 
-      <div class="collapse navbar-collapse js-navbar-collapse">
+      <div class="collapse navbar-collapse ">
         <ul class="nav navbar-nav">
-          <li><a href={% url 'index' %}>Home</a></li>
+          <li><a href="/" id="home">Home</a></li>
           <li class="dropdown mega-dropdown">
-            <a href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
+            <a id="aboutus" href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
             <ul class="dropdown-menu mega-dropdown-menu">
 
               <div class="container-fluid">
                 <div class="row">
                   {% for dropdown in aboutusdropdown.all %}
-                  <div class="col-md-2"><a href="#"><img class="aimg" src="{{ dropdown.Image.url }}"></a>
+                  <div class="col-md-2"><a href="{% url 'aboutus' %}"><img class="aimg" src="{{ dropdown.Image.url }}"></a>
                     <p class="content_p">{{ dropdown.Name }}</p>
                   </div>
-                  {% endfor %}<div class="col-md-1 ">
+                  {% endfor %}
+                  <div class="col-md-1">
                     <div class="fa_close">
                       <i class="fa fa-window-close"></i>
                     </div>
@@ -90,7 +96,7 @@
             </ul>
           </li>
           <li class="dropdown mega-dropdown">
-            <a href={% url 'products' %}>Products <span class="caret"></span></a>
+            <a id="products" href={% url 'products' %}>Products <span class="caret"></span></a>
             <ul class="dropdown-menu mega-dropdown-menu">
 
               <div class="container-fluid">
@@ -143,7 +149,7 @@
           </li>
 
           <li class="dropdown mega-dropdown">
-            <a href="#">Specialties <span class="caret"></span></a>
+            <a id="specialties" href="#">Specialties <span class="caret"></span></a>
             <ul class="dropdown-menu mega-dropdown-menu">
 
               <div class="container-fluid">
@@ -160,7 +166,7 @@
               </div>
             </ul>
           </li>
-          <li><a href={% url 'knowledge' %}>Knowledge Library</a></li>
+          <li><a id="knowledge" href={% url 'knowledge' %}>Knowledge Library</a></li>
           <li class="dropdown mega-dropdown">
             <a href="#">Join Our Network <span class="caret"></span></a>
             <ul class="dropdown-menu mega-dropdown-menu">
@@ -201,10 +207,72 @@
               </div>
             </ul>
           </li>
-          <li><a href={% url 'contactus' %}>Contact Us</a></li>
+          <li><a id="contactus" href={% url 'contactus' %}>Contact Us</a></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </nav>
+    <div class="row">
+      <div class="col-md-12">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+        {% endfor%}
+        {% endif%}
+      </div>
+    </div>
+<style>
+.navbar {   
+    border-bottom: 1px solid #fff !important;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav > li > a, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    position: relative;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+.navbar .navbar-nav > li > a:before {
+    background-color: #ffffff !important;
+    content:"";
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+   
+}
+.navbar .navbar-nav > li > a:hover:before, .navbar-default .navbar-nav > li > a:focus:before {
+    visibility: visible;
+    
+}
+.navbar .navbar-nav > li > a.active:before {
+    background-color: #ffffff !important;
+    visibility: visible;
+    
+}
+.navbar .navbar-nav > .open > a {
+    color: #ffffff !important;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+.navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus {
+    background-color: #FFFFFF;
+}
+
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
+}
+.dropdown .dropdown-menu li a {  
+    width: 200px;
+    height: 27px;
+    padding: 15px auto;
+}
+</style>    
   </div>
 
   <!-- </div> -->
@@ -321,70 +389,76 @@
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-<script src="{% static 'js/viodyne.js' %}"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/viodyne.js' %}"></script>
 
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRftvH1Qoqh_qQvRZt_3VtZ__5o20MkfE&callback=initMap">
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRftvH1Qoqh_qQvRZt_3VtZ__5o20MkfE&callback=initMap">
+    </script>
+  <script type="text/javascript">
+
+    function initMap() {
+      var center = { lat: 28.4832119, lng: -33.4590338 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: center
+      });
+      var marker = new google.maps.Marker({
+        position: { lat: 24.742460, lng: 46.644594 },
+        map: map,
+        title: 'Saudi Arabia'
+      });
+
+      var beachMarker = new google.maps.Marker({
+        position: { lat: 34.1135167, lng: -117.872065 },
+        map: map,
+        title: 'United States'
+      });
+
+    }
+
   </script>
-<script type="text/javascript">
 
-  function initMap() {
-    var center = { lat: 28.4832119, lng: -33.4590338 };
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 2,
-      center: center
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>$(document).ready(function () {
+      $(".fa_close").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
     });
-    var marker = new google.maps.Marker({
-      position: { lat: 24.742460, lng: 46.644594 },
-      map: map,
-      title: 'Saudi Arabia'
+  </script>
+  <script>$(document).ready(function () {
+      $(".fa_close1").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
+    });</script>
+  <script>$(document).ready(function () {
+      $(".close_icone").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
+    });</script>
+
+  <script>
+    $(document).ready(function () {
+      $('.nav > li > a').click(function (e) {
+        var id = $(this).attr("id");
+        localStorage.setItem("active", id);
+        $('.nav > li > a').removeClass('active');
+        $(this).addClass('active');
+      });
+      if(localStorage.getItem("active") != undefined)
+      {
+        $('.nav > li > a').removeClass('active');
+        $("#"+localStorage.getItem("active")).addClass('active');
+      }
+
     });
-
-    var beachMarker = new google.maps.Marker({
-      position: { lat: 34.1135167, lng: -117.872065 },
-      map: map,
-      title: 'United States'
-    });
-
-  }
-
-</script>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<!-- <script type="text/javascript">$(document).ready(function(){
-        $(".dropdown").hover(            
-            function() {
-                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-                $(this).toggleClass('open');        
-            },
-            function() {
-                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-                $(this).toggleClass('open');       
-            }
-        );
-    });</script> -->
-<script>$(document).ready(function () {
-    $(".fa_close").click(function () {
-      $(".dropdown-menu").hide();
-    });
-
-  });
-</script>
-<script>$(document).ready(function () {
-    $(".fa_close1").click(function () {
-      $(".dropdown-menu").hide();
-    });
-
-  });</script>
-<script>$(document).ready(function () {
-    $(".close_icone").click(function () {
-      $(".dropdown-menu").hide();
-    });
-
-  });</script>
-</body>
+  </script>
+  </body>
 
 </html>

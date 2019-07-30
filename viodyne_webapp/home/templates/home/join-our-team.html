@@ -94,8 +94,20 @@
                             <div class="row">
                               <div class="col-xs-12 col-md-12">
                                 <div class="col-md-6">
-                                  <div class="google-captcha">
-                                    <img src="{% static 'images/google-captcha.png' %}">
+                                    <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk"
+                                    style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;">
+                                    <div style="width: 304px; height: 78px;">
+                                      <div>
+                                        <iframe
+                                          src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk&amp;co=aHR0cDovL3d3dy52aW9keW5lLmNvbTo4MA..&amp;hl=en&amp;v=v1562567553145&amp;size=normal&amp;cb=uwny1clw7ii8"
+                                          width="304" height="78" role="presentation" name="a-554j9vu93hiy" frameborder="0"
+                                          scrolling="no"
+                                          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
+                                        </iframe></div>
+                                      <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
+                                      </textarea>
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="col-md-6 viodyneBtnPrimery">

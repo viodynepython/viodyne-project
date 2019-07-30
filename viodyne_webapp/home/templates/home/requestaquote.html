@@ -18,30 +18,34 @@
                   <th scope="col">Item No.</th>
                   <th scope="col">Description</th>
                   <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
                   <th scope="col">Remove</th>                  
                 </tr>
               </thead>
               <tbody>
+                {% for item in cart %}
                 <tr>
-                  <th scope="row">1</th>
-                  <td>SRT-200100</td>
-                  <td>200mm x 100m</td>
-                  <td>Cell</td>
+                  <td scope="row" > <img style="height: 61px;" src="{{item.product.Image.url }}"></td>
+                  <td>{{item.product.Item_number}}</td>
+                  <td>{{item.product.Description}}</td>
+                  <td>{{item.quantity}}</td>
+                  <td>{{item.total_price }}</td>
                   <td> 
-                      <i class="fa fa-window-close"></i>
+                     <a href="{% url 'removefromcart' item.product.id  %}"> <i class="fa fa-window-close" ></i></a>
                       </td>                  
                 </tr>             
-                
+                {% endfor %}
               </tbody>
             </table>
           </div>
+          <!-- {{cart}} -->
     </div>
     <div class="row">
-
+        <form role="form" action="" method="POST" style="margin-right: 0px;">
       <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
 
         
-        <form role="form" action="" method="POST" style="margin-right: 0px;">
+      
           {% csrf_token %}
           <div class="col-md-6">
             <div class="form-group">
@@ -73,7 +77,7 @@
               {{ form.MESSAGE }}
             </div>
           </div>                
-        </form>
+      
       </div>
    
       <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
@@ -93,6 +97,7 @@
       </div>
       <br>
       </div>
+    </form>
 
     </div> 
   </div>  

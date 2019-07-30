@@ -195,4 +195,41 @@ class Migration(migrations.Migration):
                 'ordering': ('Name',),
             },
         ),
+          migrations.CreateModel(
+            name='BecomeDistributer',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('NAME', models.CharField(max_length=120)),
+                ('COMPANY', models.CharField(max_length=120)),
+                ('TELEPHONE', models.CharField(max_length=120)),
+                ('EMAIL', models.EmailField(max_length=120)),
+                ('MESSAGE', models.CharField(max_length=300)),
+                ('IMAGE', models.ImageField(blank=True, upload_to='distributer')),
+            ],
+            options={
+                'ordering': ('NAME',),
+            },
+        ),
+        migrations.CreateModel(
+            name='ProductImages',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('unit_price', models.DecimalField(decimal_places=2, default=0.0, max_digits=6)),
+                ('quantity', models.IntegerField(default=0)),
+                ('Description', models.CharField(max_length=120)),
+                ('Item_number', models.CharField(max_length=50)),
+                ('Image', models.ImageField(upload_to='ProductsImages/')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='ProductSubCategory',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('Name', models.CharField(max_length=120)),
+                ('Category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.ProductCategory')),
+            ],
+            options={
+                'ordering': ('Name',),
+            },
+        ),
     ]

@@ -30,6 +30,21 @@
         height: 25px !important;
 }
 
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+}
+
 a#searchBtn {
     border-color: #12295d;
     color: #fff;
@@ -1060,9 +1075,9 @@ body.custom-body-mt {
     
 }
 
-.navbar li>a:hover {
+/* .navbar li>a:hover {
    border-bottom: 2px solid #ffffff !important;
-}
+} */
 /* .navbar-nav>li>.dropdown-menu {
     margin-top: 1px !important;
 } */

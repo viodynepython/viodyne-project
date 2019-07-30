@@ -63,15 +63,40 @@
                       <div class="viodyneBoxInnerTitle">
                         {{ slide.Name }}
                       </div>
-                      <div class="viewMore">
-                      <a href="#">View More <span class="caret"></span></a>
-                      </div>
+                      <div id="show" onclick="getProducts({{ slide.id }})"  class="viewMore">                          
+                       <a>View More <span class="caret"></span></a>
+                      </div>                    
+                        
                   </div>
-              </div>
-              {% endfor %}
+              </div>          
 
+              {% endfor %}
+              <style>
+                  #homeProds {
+                      margin-top: 35px !important;
+                  }
+                  #homeProds .hover_Products img {
+                    width: 100%;                   
+                    border-radius: 15px;
+                }
+                
+             </style>            
+            
+             <div class="row menu" id="showProducts">
+               
+              </div>
+             
             </div>
         </div>
+
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+                $('#show').click(function() {
+                  $('.menu').toggle("slide");
+                });
+            });
+            </script> -->
+
         </section>
 
       {% endblock %}

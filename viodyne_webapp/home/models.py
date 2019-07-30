@@ -54,6 +54,20 @@ class JoinUs(models.Model):
 	def __str__(self):
 		  return self.NAME
 
+class RequestQuote(models.Model):
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+	CART_ID	   = models.IntegerField()
+	IMAGE 	   = models.ImageField(upload_to='joinus', blank=True)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+		  return self.NAME
+
 class HomeS1(models.Model):
 	Name = models.CharField(max_length=120)
 	Image =models.ImageField(upload_to='s1/')
@@ -154,9 +168,10 @@ class ProductSubCategory(models.Model):
 
 class ProductsList(models.Model):
 	Name = models.CharField(max_length=120)
-	unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
-	quantity=models.IntegerField(default=0)
-	SubCategory = models.ForeignKey(ProductSubCategory, on_delete=models.CASCADE)
+	# unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
+	# quantity=models.IntegerField(default=0)
+	Category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+	SubCategory = models.ForeignKey(ProductSubCategory,blank=True,null=True, on_delete=models.CASCADE)
 	# content=models.TextField(blank=True, null=True)
 	content= HTMLField(blank=True, null=True)
 
@@ -166,8 +181,16 @@ class ProductsList(models.Model):
 	def __str__(self):
 		return self.Name
 
+	@property
+	def images(self):
+		return self.ProductImages_set.all()
+
 class ProductImages(models.Model):
 	Category = models.ForeignKey(ProductsList, related_name='images', on_delete=models.CASCADE)
+	unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
+	quantity=models.IntegerField(default=0)
+	Description=models.CharField(max_length=120)
+	Item_number= models.CharField(max_length=50)
 	Image = models.ImageField(upload_to='ProductsImages/')
 												
 

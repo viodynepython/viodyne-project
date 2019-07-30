@@ -65,7 +65,27 @@ function initCarousel(elmClass){
 
 
 }
+function getProducts(id){
+    callWebApi("http://127.0.0.1:8000/getProduct/"+id).then(function(data) {
+      console.log(data);
+var htmlStr="";
+      data.forEach(em => {
+        htmlStr += '<div class="col-md-3" id="homeProds" > ' +               
+          '<div class="hover_Products">'+
+           ' <div style="display:inline-block;border:1px solid #12295d; border-radius:15px">'+
+             ' <a href="viewProducts/'+em.id+'">'+
+              '<img src="'+ em.images[0].Image +'" width="75px;" height="75px" style="border-radius:15px;" title="title">'+
+           ' </a></div><p><a href="viewProducts/'+em.id+'">'+ em.Name+'</a></p></div>  </div>'
+      });
 
+      $('#showProducts').html(htmlStr);
+
+    });
+}
+
+function callWebApi(url){
+  return  $.ajax({ url: url })
+}
 
 $(document).ready(function () {
     var itemsMainDiv = ('.MultiCarousel');
@@ -88,6 +108,8 @@ $(document).ready(function () {
     $(window).resize(function () {
         ResCarouselSize();
     });
+
+    
 
     //this function define the size of the items
     function ResCarouselSize() {

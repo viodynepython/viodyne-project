@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # 'django_mysql',
+    'rest_framework',
     'cart',
     'tinymce',
     'home.apps.HomeConfig',
@@ -91,6 +92,12 @@ DATABASES = {
            'PASSWORD':'login@123',    
            'HOST':'127.0.0.1',
            'PORT':'3306'}
+    # 'default': {'ENGINE':'django.db.backends.mysql',
+    #        'NAME':'viodyne_webapp',
+    #        'USER':'rootsumit',
+    #        'PASSWORD':'qwerty@123',    
+    #        'HOST':'db4free.net',
+    #        'PORT':'3306'}
 }
 
 
