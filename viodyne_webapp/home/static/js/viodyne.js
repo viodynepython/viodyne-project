@@ -70,11 +70,11 @@ function getProducts(id){
       console.log(data);
 var htmlStr="";
       data.forEach(em => {
-        htmlStr += '<div class="col-md-3" id="homeProds" > ' +               
+        htmlStr += '<div class="col-md-2" id="homeProds" > ' +               
           '<div class="hover_Products">'+
            ' <div style="display:inline-block;border:1px solid #12295d; border-radius:15px">'+
              ' <a href="viewProducts/'+em.id+'">'+
-              '<img src="'+ em.images[0].Image +'" width="75px;" height="75px" style="border-radius:15px;" title="title">'+
+              '<img src="'+ em.images[0].Image +'"style="border-radius:15px;width:80px !important;height:80px !important;" title="title">'+
            ' </a></div><p><a href="viewProducts/'+em.id+'">'+ em.Name+'</a></p></div>  </div>'
       });
 

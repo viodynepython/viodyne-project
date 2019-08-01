@@ -1129,3 +1129,25 @@ ul.dropdown-menu.mega-dropdown-menu {
 .custom-unsubscribe-p-color p{
     color: red;
 }
+
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.custom-ul-li-vertical {
+    /* /list-style-type: none  !important; */
+    margin: 0;
+    padding: 0;
+}
+.custom-ul-li-vertical li {
+    list-style-type: none !important;
+  }
+  mt-10{
+      margin-top: 10px !important;
+  }
+
+  .custom-ul-li-vertical > :first-child {
+    font-weight: bold;
+    color:#000 !important;
+  }

@@ -86,18 +86,18 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
 	##,
-	'default': {'ENGINE':'django.db.backends.mysql',
-           'NAME':'viodyne_webapp',
-           'USER':'root',
-           'PASSWORD':'login@123',    
-           'HOST':'127.0.0.1',
-           'PORT':'3306'}
-    # 'default': {'ENGINE':'django.db.backends.mysql',
+	# 'default': {'ENGINE':'django.db.backends.mysql',
     #        'NAME':'viodyne_webapp',
-    #        'USER':'rootsumit',
-    #        'PASSWORD':'qwerty@123',    
-    #        'HOST':'db4free.net',
+    #        'USER':'root',
+    #        'PASSWORD':'login@123',    
+    #        'HOST':'127.0.0.1',
     #        'PORT':'3306'}
+    'default': {'ENGINE':'django.db.backends.mysql',
+           'NAME':'c1viodyne_webapp',
+           'USER':'c1viodyne',
+           'PASSWORD':'2LeU3d4@fTa7jW',    
+           'HOST':'172.107.178.19',
+           'PORT':'3306'}
 }
 
 

@@ -1,6 +1,10 @@
 astroid==2.2.5
+autopep8==1.4.4
 colorama==0.4.1
 Django==2.2.2
+django-cart==1.0.4
+django-tinymce==2.8.0
+djangorestframework==3.10.0
 isort==4.3.20
 lazy-object-proxy==1.4.1
 mccabe==0.6.1
@@ -8,6 +12,7 @@ mysql-connector-python==8.0.16
 mysqlclient==1.4.2.post1
 Pillow==6.0.0
 pylint==2.3.1
+pycodestyle==2.5.0
 pytz==2019.1
 six==1.12.0
 sqlparse==0.3.0
