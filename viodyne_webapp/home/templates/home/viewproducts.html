@@ -1,0 +1,603 @@
+{% extends "home/header.html" %}
+<!-- Home slider -->
+{% block content %}
+{% load static %}
+
+<div class="main-wrapper bg-gray">
+  <section class="about-us">
+    <div class="container bg-white">
+
+      <div class="home_content">
+        <ol class="breadcrumb" style="background-color:transparent">
+          <li class="breadcrumb-item"><a style="font-size:12px" href="/">Home</a></li>
+          <li class="breadcrumb-item"><a style="font-size:12px" href="/Homepage/Home?category=0000">Products</a></li>
+          <li class="breadcrumb-item"><a style="font-size:12px" href="/Homepage/Home?category=0001">Body Cooling and
+              Heating</a></li>
+          <li class="breadcrumb-item active" style="font-size:12px">
+          {% for product in productDetalis.all %}
+          {{product.Name}}
+          {% endfor %}
+          </li>
+        
+        </ol>
+
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <div id="product_image_gallery" class="fotorama" data-width="100%" data-nav="thumbs">
+              <div class="MultiCarousel" data-items="1" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                <div class="MultiCarousel-inner">
+                  {% for slider in productImages.all %}
+                  <div class="item">
+                    <div class="pad15 itemSlider">
+                      <img src="{{ slider.Image.url }}">
+                      <p class="lead">{{ slider.Name }}</p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+                <a class="leftLst"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a class="rightLst"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-8">
+
+            <h2 style="color:#286ed0;border-bottom:1px solid #286ed0;padding-bottom:7px"> {% for product in productDetalis.all %}
+              {{product.Name}}
+              {% endfor %}
+            </h2>
+
+            <div class="col-md-8 ">
+              <div id="Products_Details_Tabs">
+                <div class="prod_Article">
+                    {% for product in productDetalis.all %}
+                    {{product.content|safe}}
+                    {% endfor %}
+                </div>
+
+
+
+              </div>
+
+            </div>
+            <style>
+              .breadcrumb {
+                    padding: 8px 15px;
+                    margin-bottom: 20px;
+                    list-style: none;
+                    background-color: #f5f5f5;
+                    border-radius: 4px;
+                }
+              .Home_content {
+                background: #fff;
+                width: 100%;
+                padding: 20px;
+                position: relative;
+                float: left;
+                border-bottom: 100px;
+                border-bottom-color: white;
+                -webkit-box-shadow: 0px 200px 0px 0px white;
+                -moz-box-shadow: 0px 200px 0px 0px white;
+                box-shadow: 0px 200px 0px 0px white;
+              }
+
+              .tab_des {
+                background: #f8fafc;
+                border: 1px solid #3878ae;
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-top-right-radius: 8px;
+              }
+
+             
+
+              .fa {
+                padding: 7px;
+                font-size: 18px;
+                width: 32px;
+                border-radius: 7px;
+                text-align: center;
+                text-decoration: none;
+                margin-bottom: 15px;
+              }
+
+              .fa:hover {
+                opacity: 0.7;
+                color: initial;
+                text-decoration: none;
+              }
+
+              .fa-facebook {
+                background: #3B5998 !important;
+                color: white !important;
+              }
+
+              .fa-twitter {
+                background: #55ACEE !important;
+                color: white !important;
+              }
+
+              .fa-google {
+                background: #dd4b39 !important;
+                color: white !important;
+              }
+
+              .fa-google-plus {
+                background: #dd4b39 !important;
+                color: white !important;
+              }
+
+              .fa-linkedin {
+                background: #007bb5 !important;
+                color: white !important;
+              }
+
+              .fa-youtube {
+                background: #bb0000 !important;
+                color: white !important;
+              }
+
+              .fa-instagram {
+                background: #125688 !important;
+                color: white !important;
+              }
+
+              .fa-pinterest {
+                background: #cb2027 !important;
+                color: white !important;
+              }
+
+              .fa-snapchat-ghost {
+                background: #fffc00 !important;
+                color: white;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important;
+              }
+
+              .fa-skype {
+                background: #00aff0 !important;
+                color: white;
+              }
+
+              .fa-android {
+                background: #a4c639 !important;
+                color: white;
+              }
+
+              .fa-dribbble {
+                background: #ea4c89;
+                color: white;
+              }
+
+              .fa-vimeo {
+                background: #45bbff;
+                color: white;
+              }
+
+              .fa-tumblr {
+                background: #2c4762;
+                color: white;
+              }
+
+              .fa-vine {
+                background: #00b489;
+                color: white;
+              }
+
+              .fa-foursquare {
+                background: #45bbff;
+                color: white;
+              }
+
+              .fa-stumbleupon {
+                background: #eb4924;
+                color: white;
+              }
+
+              .fa-flickr {
+                background: #f40083;
+                color: white;
+              }
+
+              .fa-yahoo {
+                background: #430297;
+                color: white;
+              }
+
+              .fa-soundcloud {
+                background: #ff5500;
+                color: white;
+              }
+
+              .fa-reddit {
+                background: #ff5700;
+                color: white;
+              }
+
+              .fa-rss {
+                background: #ff6600;
+                color: white;
+              }
+              .fa-envelope{
+                background: #b8213b !important;
+                color: white !important;
+              }
+
+              .icon-border-radius{
+                 border-radius: 17px !important;
+              }
+              .tab_des .prod_Details {
+                margin: 15px 5px 5px 15px;
+                overflow-x: auto;
+              }
+
+              .cd-add-to-cart {
+                display: inline-block;
+                padding: .5em 1.8em;
+                background: #2c97de;
+                border-radius: 5px;
+                text-transform: uppercase;
+                color: #ffffff;
+                font-weight: 700;
+                letter-spacing: .1em;
+                -webkit-transition: all .2s;
+                transition: all .2s;
+              }
+
+              .cd-add-to-cart:hover {
+                background: #42a2e1 !important;
+                text-decoration: none !important;
+              }
+
+              .tab_des .prod_Details table {
+                border-top: solid #172240 thin;
+                border-bottom: solid #172240 thin;
+              }
+
+              .tab_des .prod_Details table tr:nth-child(even) {
+                background-color: #c3e6f7;
+              }
+
+              .tab_des .prod_Details table th {
+                background-color: #3a93cf;
+                color: white;
+                text-align: center;
+                border-right: solid #fff thin;
+              }
+
+              .related_container_inner {
+                height: 185px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 10px;
+              }
+
+              .related_container_inner img {
+                height: 120px;
+                width: 180px;
+                border-radius: 15px;
+              }
+
+              .Home_content {
+                background: #fff;
+                width: 100%;
+                padding: 20px;
+                position: relative;
+                float: left;
+                border-bottom: 100px;
+                border-bottom-color: white;
+                -webkit-box-shadow: 0px 200px 0px 0px white;
+                -moz-box-shadow: 0px 200px 0px 0px white;
+                box-shadow: 0px 200px 0px 0px white;
+              }
+              #product_image_gallery {
+                padding: 5px;
+                border: 1px solid #3878ae;
+                border-radius: 8px;
+              }
+            
+
+
+              /* a:hover, a:focus {   
+                  text-decoration: none !important;
+                  color: white !important;
+              } */
+            </style>
+            <div class="col-md-4 follow_hide">
+              <div class="row" style="border-bottom:#286ed0 1px solid;margin-top:25px;">
+                <div class="col-sm-12">
+                  <label>Like and Follow</label>
+                </div>
+
+                <div class="col-md-12">
+                  <a href="https://www.facebook.com/viodyne" target="_blank" class="fa fa-facebook"></a>
+                  <a href="https://plus.google.com/+Viodyne" target="_blank" class="fa fa-google-plus"></a>
+                  <a href="https://www.linkedin.com/company/viodyne" target="_blank" class="fa fa-linkedin"></a>
+                  <a href="https://www.pinterest.com/viodyne" target="_blank" class="fa fa-pinterest"></a>
+                  <a href="https://www.twitter.com/Viodyne" target="_blank" class="fa fa-twitter"></a>
+                  <a href="https://www.youtube.com/c/Viodyne" target="_blank" class="fa fa-youtube"></a>
+
+                </div>
+
+              </div>
+
+              <div class="row" style="border-bottom:#286ed0 1px solid;margin-top:15px;padding-bottom:15px;">
+
+                <div class="col-sm-12">
+                  <label>Recommend and Share</label>
+                </div>
+
+
+                <div class="col-sm-12">
+                    <a href="mailto:?Body=Class 5 Steam Integrating Indicators%0ASterile Processing Supplies%0Ahttp://viodyne.com/ProductList/ViewProduct_Pre?Cd=2" target="_blank" class="icon-border-radius fa fa-envelope"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fviodyne.com%2FProductList%2FViewProduct_Pre%3FCd%3D2&amp;title=Class%205%20Steam%20Integrating%20Indicators&amp;description=Sterile%20Processing%20Supplies" target="_blank" class="icon-border-radius fa fa-facebook"></a>
+                    <a href="https://plus.google.com/share?url=http%3A%2F%2Fviodyne.com%2FProductList%2FViewProduct_Pre%3FCd%3D2" target="_blank" class="icon-border-radius fa fa-google-plus"></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fviodyne.com%2FProductList%2FViewProduct_Pre%3FCd%3D2&amp;title=Class%205%20Steam%20Integrating%20Indicators&amp;summary=Sterile%20Processing%20Supplies" target="_blank" class="icon-border-radius fa fa-linkedin"></a>
+                    <a href="http://pinterest.com/pin/create/link/?url=http%3A%2F%2Fviodyne.com%2FProductList%2FViewProduct_Pre%3FCd%3D2&amp;description=Class%205%20Steam%20Integrating%20Indicators - Sterile%20Processing%20Supplies&amp;media=http%3A%5Cviodyne.com%5CExternalPlugIn%5Cfileman%5CUploads%5CProducts%5C2%5CClass%205%20Steam%20Indicators.png" target="_blank" class="icon-border-radius fa fa-pinterest"></a>
+                    <a href="http://twitter.com/home?status=Class%205%20Steam%20Integrating%20Indicators - Sterile%20Processing%20Supplies - http%3A%2F%2Fviodyne.com%2FProductList%2FViewProduct_Pre%3FCd%3D2" target="_blank" class="icon-border-radius fa fa-twitter"></a>
+                
+                </div>
+
+                
+              </div>
+
+              <div class="row" style="margin-top:15px;padding-bottom:15px;text-align:center">
+
+                <a href="/HomePage/Contact_form" class="btn bg_Gradient" style="color:white">CONTACT US</a>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-12 col-lg-12 col-sm-12">
+            <br>
+
+            <ul class="nav nav-tabs" id="tab_nav">
+              <li id="tabNav" class="active">
+                <a data-tab-prod-id="=&quot;2&quot;" data-toggle="tab" href="#2">
+                  <span class="glyphicon glyphicon-shopping-cart"></span>
+                  Product Details
+                </a>
+              </li>
+              <li id="tabNav">
+                <a data-tab-prod-id="3" data-toggle="tab" href="#3">
+                  <span class="glyphicon glyphicon-user"></span>
+                  Request a Rep
+                </a>
+              </li>
+
+            </ul>
+
+
+            <div class="tab-content tab_des">
+              <div id="2" class="tab-pane  fade in active">
+
+
+                <div class="prod_Details">
+                  <table class="table table-hover" id="dt_prodDetails" style="width:100%;">
+                    <thead>
+                      <tr>
+                        <th style="width:auto">Item No.</th>
+                        <th style="width: auto;">Description</th>
+                        <th style="width: auto;">Quantity</th>
+                        <th style="width: auto;">Quote Request Cart</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in productImages.all %}
+                        <tr>
+                            <td style="text-align:center">{{product.Item_number}}</td>
+                            <td>{{product.Description}}</td>
+                            <td style="text-align:center">{{product.quantity}} Pcs/Pack </td>
+                            <td style="text-align:center">
+    
+                              <a href="{% url 'addtocart' product.id product.quantity product_id  %}" class="cd-add-to-cart bg_Gradient"
+                                data-name="Class 5 Steam Integrating Indicators " data-from="main" data-cd="2"
+                                data-id="SI51">Add</a>
+    
+    
+                          </td>
+                        {% endfor %}
+                     
+                      </tr>
+
+                    </tbody>
+
+
+                  </table>
+                </div>
+
+              </div>
+              <div id="3" class="tab-pane  fade">
+
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <br>
+                   
+                    <form role="form" action="" method="post">
+                        {% csrf_token %}
+                      <div class="col-md-6" style="margin-bottom:10px;">
+                        <label><span style="color:red">*</span> NAME:</label>
+                        <input type="text" name="Name" id="repName" class="form-control" required="">
+                      </div>
+                      <div class="col-md-6" style="margin-bottom:10px;">
+                        <label><span style="color:red">*</span> COMPANY:</label>
+                        <input type="text" name="Company" id="repCompany" class="form-control" required="">
+                      </div>
+                      <div class="col-md-6" style="margin-bottom:10px;">
+                        <label><span style="color:red">*</span> TELEPHONE:</label>
+                        <input type="text" name="Telephone" id="repTelephone" class="form-control" required="">
+                      </div>
+                      <div class="col-md-6" style="margin-bottom:10px;">
+                        <label><span style="color:red">*</span> EMAIL:</label>
+                        <input type="email" name="Email" id="repEmail" class="form-control">
+                      </div>
+                      <div class="col-md-12" style="margin-bottom:10px;">
+                        <label><span style="color:red">*</span> MESSAGE:</label>
+                        <textarea name="Message" id="repMsg" class="form-control" required=""></textarea>
+                      </div>
+                      <div class="col-md-7" style="margin-bottom:10px;">
+                        <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk"
+                          style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;">
+                          <div style="width: 304px; height: 78px;">
+                            <div>
+                              <iframe
+                                src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk&amp;co=aHR0cDovL3d3dy52aW9keW5lLmNvbTo4MA..&amp;hl=en&amp;v=v1562567553145&amp;size=normal&amp;cb=uwny1clw7ii8"
+                                width="304" height="78" role="presentation" name="a-554j9vu93hiy" frameborder="0"
+                                scrolling="no"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
+                              </iframe></div>
+                            <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                              style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
+                            </textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-offset-1 col-md-4" style="margin-bottom:10px;padding:10px">
+                        <input type="submit" class="btn btn btn-success btn-block bg_Gradient" name="Send" value="SEND"
+                          style="border:0px;background-color:#12295d">
+                      </div>
+                    </form>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                      <script>
+                        $("form").submit(function () {
+                          localStorage.setItem('repName', $('#repName').val());
+                          localStorage.setItem('repCompany', $('#repCompany').val());
+                          localStorage.setItem('repTelephone', $('#repTelephone').val());
+                          localStorage.setItem('repEmail', $('#repEmail').val());
+                          localStorage.setItem('repMsg', $('#repMsg').val());
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12" style="text-align:center !important;">
+                    <br><br><br><br><br>
+                    <img id="salesrep" src="{% static 'images/JoinOurTeam.jpg' %}" class="img-responsive img-rounded" style="border-radius:10px">
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <script>
+
+              // var p=JSON.parse( {{ productDetalis|safe }});
+              // console.log(p);
+              // if (location.hash) {
+              //   $('a[href=\'' + location.hash + '\']').tab('show');
+              // }
+              // var activeTab = localStorage.getItem('activeTab');
+              // if (activeTab) {
+              //   $('a[href="' + activeTab + '"]').tab('show');
+              // }
+
+              // $('body').on('click', 'a[data-toggle=\'tab\']', function (e) {
+              //   e.preventDefault()
+              //   var tab_name = this.getAttribute('href')
+              //   if (history.pushState) {
+              //     history.pushState(null, null, tab_name)
+              //   }
+              //   else {
+              //     location.hash = tab_name
+              //   }
+              //   localStorage.setItem('activeTab', tab_name)
+
+              //   $(this).tab('show');
+              //   return false;
+              // });
+              // $(window).on('popstate', function () {
+              //   var anchor = location.hash ||
+              //     $('a[data-toggle=\'tab\']').first().attr('href');
+              //   $('a[href=\'' + anchor + '\']').tab('show');
+              // });
+            </script>
+
+          </div>
+
+          <div class="col-md-12 col-lg-12 col-sm-12">
+            <br>
+            <br>
+            <h4 style="border-bottom:#286ed0 1px solid;margin-bottom:5px">Related Products</h4>
+            <br>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="related_container_inner" style="text-align:center">
+
+                  <div class="row">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=1"><img
+                        src="\ExternalPlugin\fileman\Uploads\Products\1\File.php6"></a>
+                  </div>
+
+                  <div class="row" style="margin-top:5px">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=1">Bowie-Dick Test Packs</a>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related_container_inner" style="text-align:center">
+
+                  <div class="row">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=3"><img
+                        src="\ExternalPlugin\fileman\Uploads\Products\3\Class 6 Steam Indicators.jpg"></a>
+                  </div>
+
+                  <div class="row" style="margin-top:5px">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=3">Class 6 Steam Emulating Indicators</a>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related_container_inner" style="text-align:center">
+
+                  <div class="row">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=4"><img
+                        src="\ExternalPlugin\fileman\Uploads\Products\4\Washer Soil Test.jpg"></a>
+                  </div>
+
+                  <div class="row" style="margin-top:5px">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=4">Indicator Tests for Washer-Disinfector Efficacy </a>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="related_container_inner" style="text-align:center">
+
+                  <div class="row">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=8"><img
+                        src="\ExternalPlugin\fileman\Uploads\Products\8\Self Seal Autoclave Pouches.jpg"></a>
+                  </div>
+
+                  <div class="row" style="margin-top:5px">
+                    <a href="/ProductList/ViewProduct_Pre?Cd=8">Self Sealing Pouches for Sterilization</a>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+
+{% endblock %}

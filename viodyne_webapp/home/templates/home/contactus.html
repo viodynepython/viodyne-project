@@ -1,0 +1,125 @@
+{% extends "home/header.html" %}>
+<!-- Home slider -->
+{% block content %}
+{% load static %}
+<div class="main-wrapper bg-gray">
+  <div class="container">
+    <div class="Home_content">
+    <div class="row">
+
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+        <h2 class="page_headers" style="padding-left: 15px;">Contact Us</h2>
+        <p style="color: #12295d; padding-left: 15px;">We are here to answer any questions you may have about your
+          Viodyne experience. Reach out to us and we'll respond to you as soon as we can.</p>
+        <form role="form" action="" method="POST" style="margin-right: 0px;">
+          {% csrf_token %}
+          <div class="row"> 
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Name"><span style="color: #f70611;">* </span>Name</label>
+              {{ form.NAME }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Company"><span style="color: #f70611;">* </span>Company</label>
+              {{ form.COMPANY }}
+            </div>
+          </div>
+          </div>
+
+          <div class="row"> 
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Telephone"><span style="color: #f70611;">* </span>Telephone</label>
+              {{ form.TELEPHONE }}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Email"><span style="color: #f70611;">* </span>Email</label>
+              {{ form.EMAIL }}
+            </div>
+          </div>
+          </div>
+
+          <div class="row"> 
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="Message"><span style="color: #f70611;">* </span>Message</label>
+              {{ form.MESSAGE }}
+            </div>
+          </div>
+          </div>
+
+          <div class="row"> 
+          <div class="col-md-6">
+              <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk"
+              style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;">
+              <div style="width: 304px; height: 78px;">
+                <div>
+                  <iframe
+                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk&amp;co=aHR0cDovL3d3dy52aW9keW5lLmNvbTo4MA..&amp;hl=en&amp;v=v1562567553145&amp;size=normal&amp;cb=uwny1clw7ii8"
+                    width="304" height="78" role="presentation" name="a-554j9vu93hiy" frameborder="0"
+                    scrolling="no"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
+                  </iframe></div>
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6  viodyneBtnPrimery">
+            <button type="submit" class="btn  bg_Gradient viodyneBtn maTop15">Send</button>
+          </div>
+          </div>
+
+          <div class="row">
+          <div class="col-sm-6 col-md-6  col-xs-12">
+              <div class="add">
+                <h4>Telephone</h4><br>
+                <div><img src={%static 'images/telusa.png'%} style="margin-right:10px;">
+                  <span>+1 858 255 0415</span>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-6  col-xs-12">
+              <div class="add">
+                <h4>Address</h4><br>
+                <p>1430 S. Grand Ave., #283<br> Glendora , CA 91740 USA</p>
+              </div>
+          </div>
+          </div>
+        </form>
+      </div>
+   
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+      <div class="map_1">
+        <div id="map_wrapper" style="height: 400px;">
+          <div id="map" style=" width: 100%; height: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+   </div>
+
+   <style>
+   .Home_content {
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  float: left;
+  border-bottom: 100px;
+  border-bottom-color: white;
+  -webkit-box-shadow: 0px 200px 0px 0px white;
+  -moz-box-shadow: 0px 200px 0px 0px white;
+  box-shadow: 0px 200px 0px 0px white;
+}
+   </style>
+  </div>
+</div>
+{% endblock %}

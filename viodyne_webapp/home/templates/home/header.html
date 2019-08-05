@@ -1,0 +1,632 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  {% block title %}<title>Home</title>{% endblock %}
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script
+
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body class="custom-body-mt">
+
+  <div class="navbar-fixed-top custom-line-top">
+    <div class="top-header">
+      <div class="container-fluid">
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <div class="logo">
+              {% load static %}
+              <a href="/"><img src="{% static 'images/viodyne_logo.png' %} ">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4  col-xs-12">
+            <div class="input-group divsearch">
+              <input type="text" class="form-control" placeholder="Search" name="q">
+
+              <div class="input-group-btn">
+                <a class="btn btn-default bg_Gradient" id="searchBtn" href="/ProductList/Products?key="><i
+                    class="glyphicon glyphicon-search"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 cart_div">
+            <div class="cart_bt">
+              <p>Become a Distributor <br> Join Our Team</p>
+              <a href={% url 'requestQoute' %} id="navToggleCart">
+                <span class="badge" id="navTotal"></span>
+                {% if cart.count > 0  %}
+                <span class="badge" id="navTotal" style="padding:5px 7px;background-color:#c70909;">{{cart.count}}</span>
+                {% endif%}
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                  
+                   Quote Request Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse ">
+        <ul class="nav navbar-nav">
+          <li><a href="/" id="home">Home</a></li>
+          <li class="dropdown mega-dropdown">
+            <a id="aboutus" href={% url 'aboutus' %}>About Us <span class="caret"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu">
+
+              <div class="container-fluid">
+                <div class="row" style="padding-left:80px !important;">
+                  {% for dropdown in aboutusdropdown.all %}
+                  <div class="col-md-2" style="margin-top: 10px; margin-right:20px;"><a href="{% url 'aboutus' %}"><img class="aimg" src="{{ dropdown.Image.url }}"></a>
+                    <p class="content_p">{{ dropdown.Name }}</p>
+                  </div>
+                  {% endfor %}  
+                  <div class="col-md-1" style="float: right;">
+                    <div class="fa_close" style="position: relative;left: 58%;top: 10px; ">
+                      <i class="fa fa-window-close"></i>
+                    </div>
+                  </div>                
+                </div>
+               
+              </div>
+            </ul>
+          </li>
+          <li class="dropdown mega-dropdown">
+            <a id="products" href={% url 'products' %}>Products <span class="caret"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu">
+
+              <div class="container-fluid">
+                  <input type="hidden" value="{{product1dropdown.all|length}}" id="hdnProductCount" />
+                <div class="col-md-5">
+                  {% for dropdown4 in product1dropdown.all %}
+                  <div class="col-md-6">
+                    <div class="body_text active{{ dropdown4.id }}" data-target="#carouselExampleControls" data-slide-to="{{ dropdown4.id }}" onclick="showNextCategory( {{ dropdown4.id }} )">
+                      <img src="{{ dropdown4.Image.url }}" alt="">
+                      <span>{{ dropdown4.Name }} &gt;</span>
+                    </div>
+                  </div>
+                  {% endfor %} </div>
+
+                <li class="col-sm-7 pad5">
+
+                  <ul class="product-list ">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+                      
+                      <div class="carousel-inner"> 
+                    
+                     
+                          <div class="item active">
+                              {% for dropdown3 in product1dropdown.all %}
+                            <div class="col-md-3" >
+                              <a href="#"><img class="pimg" src="{{ dropdown3.Image.url }}" class="img-responsive"
+                                  alt="product 1"></a>
+                              <p  class="slider_text">{{ dropdown3.Name }}</p>
+                            </div>
+                            {% endfor %}
+
+                          </div>
+                          <div class="item">
+                              <div class="row">
+  
+                                <div class="col-md-6">
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                      <ul class="custom-ul-li-vertical">
+                                          <li>caps</li>
+                                          <li>neck ties</li>                                        
+                                        </ul> 
+                                        <ul class="custom-ul-li-vertical">
+                                            <li>Vests</li>
+                                            <li>childern tie-side vests</li>   
+                                            <li>nomax vests</li>  
+                                            <li>vests</li>                                      
+                                          </ul>                                     
+                                  </div>
+                                  <div class="col-md-6">
+                                      <ul class="custom-ul-li-vertical mt-10">
+                                          <li>wraps</li>
+                                          <li>anky wraps</li>    
+                                          <li>albow wraps</li>
+                                          <li>anky wraps</li>                                    
+                                        </ul>                                      
+                                  </div>
+  
+                                 </div>
+                                  
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                  <div class="map_1">
+                                    <!-- <div id="map_wrapper" style=" height: 300px;"> -->
+                                      <!-- <div id="map" style=" width: 100%; height: 100%;">
+                                      </div> -->
+                                      <div class="">
+                                      <img src="{% static 'images/body.jpg' %}">
+                                      </div>
+                                    <!-- </div> -->
+                                  </div>
+                                </div>
+                              </div>
+  
+  
+                            </div>
+
+                            <div class="item">
+                                <div class="row">
+  
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                    <p>delivery advance medical equipment</p>
+                                      
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                      <div class="map_1">
+                                        <!-- <div id="map_wrapper" style=" height: 300px;"> -->
+                                          <!-- <div id="map" style=" width: 100%; height: 100%;">
+                                          </div> -->
+                                          <div class="">
+                                          <img src="{% static 'images/body.jpg' %}">
+                                          </div>
+                                        <!-- </div> -->
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+  
+                                    <div class="col-md-6">
+                                     <div class="row">
+                                      <div class="col-md-6">
+                                          <ul class="custom-ul-li-vertical">
+                                              <li>caps</li>
+                                              <li>neck ties</li>                                        
+                                            </ul> 
+                                            <ul class="custom-ul-li-vertical">
+                                                <li>Vests</li>
+                                                <li>childern tie-side vests</li>   
+                                                <li>nomax vests</li>  
+                                                <li>vests</li>                                      
+                                              </ul>                                     
+                                      </div>
+                                      <div class="col-md-6">
+                                          <ul class="custom-ul-li-vertical mt-10">
+                                              <li>wraps</li>
+                                              <li>anky wraps</li>    
+                                              <li>albow wraps</li>
+                                              <li>anky wraps</li>                                    
+                                            </ul>                                      
+                                      </div>
+      
+                                     </div>
+                                      
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                      <div class="map_1">
+                                        <!-- <div id="map_wrapper" style=" height: 300px;"> -->
+                                          <!-- <div id="map" style=" width: 100%; height: 100%;">
+                                          </div> -->
+                                          <div class="">
+                                          <img src="{% static 'images/body.jpg' %}">
+                                          </div>
+                                        <!-- </div> -->
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                    <p>provide surgical  medical equipment</p>
+                                      
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                                      <div class="map_1">
+                                        <!-- <div id="map_wrapper" style=" height: 300px;"> -->
+                                          <!-- <div id="map" style=" width: 100%; height: 100%;">
+                                          </div> -->
+                                          <div class="">
+                                          <img src="{% static 'images/body.jpg' %}">
+                                          </div>
+                                        <!-- </div> -->
+                                      </div>
+                                    </div>
+                                  
+                            </div>
+                            <div class="item">6</div>
+                            <div class="item">7</div>
+                            <div class="item">8</div>
+
+                        </div>
+                      <!-- End Carousel Inner -->
+                      <!-- Controls -->
+                      <a class="left carousel-control"  href="#carouselExampleControls"   role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control"  role="button" href="#carouselExampleControls"  data-slide="next">
+
+                        <span class="glyphicon glyphicon-chevron-right"  aria-hidden="true"></span>
+                        <span class="close_icone"><i class="fa fa-window-close"></i></span>
+                        <span class="sr-only">Next</span>
+
+                      </a>
+                    </div><!-- /.carousel -->
+                    <!-- <li class="divider"></li> -->
+
+                  </ul>
+
+                  
+
+                 
+
+                  
+
+                  
+  
+
+                </li>
+              </div>
+            </ul>
+          </li>
+
+          <li class="dropdown mega-dropdown">
+            <a id="specialties" href="#">Specialties <span class="caret"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu">
+
+              <div class="container-fluid">
+                {% for dropdown1 in specialtiesdropdown.all %}
+                <div class="col-md-2" style="margin-top: 10px; margin-right:20px;"><a href="#"> <img class="aimg" src="{{ dropdown1.Image.url }}"></a>
+                  <p class="content_p1">{{ dropdown1.Name }}</p>
+                </div>
+                {% endfor %}
+                <div class="col-md-1" style="float: right;">
+                  <div class="fa_close" style="position: relative;left: 58%;top: 10px; ">
+                    <i class="fa fa-window-close"></i>
+                  </div>
+                </div>                
+
+              </div>
+            </ul>
+          </li>
+          <li><a id="knowledge" href={% url 'knowledge' %}>Knowledge Library</a></li>
+
+          <li class="dropdown mega-dropdown">
+            <a href="#">Join Our Network <span class="caret"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu">
+
+              <div class="container-fluid">
+                <div class="row">
+                  {% for dropdown2 in joinusdropdown.all %}
+                  <div class="col-md-5">
+
+                   <div class="row">              
+                    <div class="col-md-6">
+                    <div class="join_img1">
+                        {% if dropdown2.id == 1 %}
+                      <a href={% url 'becomeDistributer' %}><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                      {% endif %}
+                     
+                    </div>
+                    </div> 
+
+                    <div class="col-md-6">
+                        <div class="join_img1">
+                            {% if dropdown2.id == 2 %}
+                            <a href={% url 'joinus' %}><img class="jus" src={{ dropdown2.Image.url }}> </a>
+                            {% endif %}
+                       </div>
+                    </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-5">
+                      <div class="row">              
+                          <div class="col-md-6">
+                      <div class="join_text">
+                          {% if dropdown2.id == 1 %}
+                          <a href={% url 'becomeDistributer' %}><p>{{ dropdown2.Name }}</p></a>
+                          {% endif %}
+
+                          </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="join_text">
+                                  {% if dropdown2.id == 2 %}
+                                  <a href={% url 'joinus' %}><p>{{ dropdown2.Name }}</p> </a>
+                                  {% endif %}
+                                  </div>
+                                  </div>                    
+                        
+                      </div>
+                    </div>
+                 
+                  {% endfor %}
+                  <div class="col-md-1">
+                    <div class="fa_close1">
+                      <i class="fa fa-window-close"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li><a id="contactus" href={% url 'contactus' %}>Contact Us</a></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </nav>
+    <div class="row">
+      <div class="col-md-12">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+        {% endfor%}
+        {% endif%}
+      </div>
+    </div>
+<style>
+.navbar {   
+    border-bottom: 1px solid #fff !important;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav > li > a, .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    position: relative;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+.navbar .navbar-nav > li > a:before {
+    background-color: #ffffff !important;
+    content:"";
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+   
+}
+.navbar .navbar-nav > li > a:hover:before, .navbar-default .navbar-nav > li > a:focus:before {
+    visibility: visible;
+    
+}
+.navbar .navbar-nav > li > a.active:before {
+    background-color: #ffffff !important;
+    visibility: visible;
+    
+}
+.navbar .navbar-nav > .open > a {
+    color: #ffffff !important;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+.navbar .navbar-nav > .open > a:hover, .navbar .navbar-nav > .open > a:focus {
+    background-color: #FFFFFF;
+}
+
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
+}
+.dropdown .dropdown-menu li a {  
+    width: 200px;
+    height: 27px;
+    padding: 15px auto;
+}
+</style>    
+  </div>
+
+  <!-- </div> -->
+</body>
+
+</html>
+{% block content %}
+{% endblock %}
+<div class="footer">
+  <div class="top-footer">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-6 col-md-3 ">
+          <div class="footer_each_colom footer_Links">
+            <h5>About Us</h5>
+            <a href={% url 'aboutus' %}>Company Overview </a>
+            <a href="#">Quality Management System </a>
+            <a href="#">Our Mission </a>
+            <a href="#">Our Vision </a>
+            <a href="#">Testimonials </a>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6 col-md-3 ">
+          <div class="footer_each_colom footer_Links">
+            <h5>Products</h5>
+            <a href="#">Body Cooling and Heating</a>
+            <a href="#">Medical Equipment</a>
+            <a href="#">Sterile Processing Supplies</a>
+            <a href="#">Surgical Instruments</a>
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-6 col-md-3 social-link">
+
+          <h5>Visit Us</h5>
+          <ul class="social">
+            <!-- <div class="row"> -->
+            <!-- <div class="col-md-6"> -->
+            <li>
+              <a href="https://www.facebook.com/viodyne" target="_blank"><img class="soc icon" title="Facebook"
+                  src="{% static 'images/LogoFacebook.png' %}"></a>
+              <a title="Facebook" href="https://www.facebook.com/viodyne" target="_blank">Facebook</a>
+            </li>
+
+            <li>
+              <a href="https://www.pinterest.com/viodyne/" target="_blank"><img class="soc icon" title="Pinterest"
+                  src="{% static 'images/LogoPinterest.png' %}"></a>
+              <a title="Pinterest" href="https://www.pinterest.com/viodyne/" target="_blank">Pinterest</a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/Viodyne" target="_blank"><img class="soc icon" title="Twitter"
+                  src="{% static 'images/LogoTwitter.png' %}"></a>
+              <a title="Twitter" href="https://twitter.com/Viodyne" target="_blank">Twitter</a>
+            </li>
+            <!-- </div> -->
+            <!-- <div class="col-md-6"> -->
+
+            <li>
+              <a href="https://www.linkedin.com/company/viodyne" target="_blank"><img class="soc icon" title="LinkedIn"
+                  src="{% static 'images/LogoLinkedlin.png' %}"></a>
+              <a title="LinkedIn" href="https://www.linkedin.com/company/viodyne" target="_blank">LinkedIn </a>
+            </li>
+
+            <li>
+              <a href="https://www.youtube.com/c/Viodyne" target="_blank"><img class="soc icon" title="YouTube"
+                  src="{% static 'images/LogoYouTube.png' %}"></a>
+              <a title="YouTube" href="https://www.youtube.com/c/Viodyne" target="_blank">YouTube</a>
+            </li>
+            <!-- </div> -->
+            <!-- </div> -->
+
+          </ul>
+        </div>
+
+        <div class="col-sm-3 col-xs-6 col-md-3 ">
+          <div class="footer_each_colom footer_Links LastMenu">
+            <!-- <h5>Knowledge Library</h5> -->
+            <!-- <h5>Join Our Network</h5> -->
+
+
+            <h5>Knowledge Library</h5>
+            <h5>Join Our Network</h5>
+            <a href={% url 'becomeDistributer' %}>Became a Distributor</a>
+            <a href={% url 'joinus' %}>Join Our Team</a>
+            <a href={% url 'contactus' %}>Contact Us</a>
+            <!-- <h5>Contact Us</h5> -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="backtotop bg_Gradient">
+    <a href="#">Back to Top</a>
+  </div>
+
+  <div id="footer_bottom">
+    <div class="container">
+      <div class="termUse">
+        <!-- <a href="#">Privacy Policy</a> -->
+        <a href={% url 'privacyPolicy' %}>Privacy Policy</a>
+        <a href={% url 'termCondition' %}>Terms of Use</a>
+      </div>
+      <div class="copyright">
+        <span class="footer_text">Copyright © 2014 - 2019 Viodyne. All Rights Reserved. Viodyne™ and the Viodyne Logo
+          are trademarks of Viodyne.</span>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script src="{% static 'js/viodyne.js' %}"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRftvH1Qoqh_qQvRZt_3VtZ__5o20MkfE&callback=initMap">
+    </script>
+  <script type="text/javascript">
+
+    function initMap() {
+      var center = { lat: 28.4832119, lng: -33.4590338 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: center
+      });
+      var marker = new google.maps.Marker({
+        position: { lat: 24.742460, lng: 46.644594 },
+        map: map,
+        title: 'Saudi Arabia'
+      });
+
+      var beachMarker = new google.maps.Marker({
+        position: { lat: 34.1135167, lng: -117.872065 },
+        map: map,
+        title: 'United States'
+      });
+
+    }
+
+  </script>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>$(document).ready(function () {
+      $(".fa_close").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
+    });
+  </script>
+  <script>$(document).ready(function () {
+      $(".fa_close1").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
+    });</script>
+  <script>$(document).ready(function () {
+      $(".close_icone").click(function () {
+        $(".dropdown-menu").hide();
+      });
+
+    });</script>
+
+  <script>
+    $(document).ready(function () {
+      $('.nav > li > a').click(function (e) {
+        var id = $(this).attr("id");
+        localStorage.setItem("active", id);
+        $('.nav > li > a').removeClass('active');
+        $(this).addClass('active');
+      });
+      if(localStorage.getItem("active") != undefined)
+      {
+        $('.nav > li > a').removeClass('active');
+        $("#"+localStorage.getItem("active")).addClass('active');
+      }
+
+    });
+  </script>
+  </body>
+
+</html>

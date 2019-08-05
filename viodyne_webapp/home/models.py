@@ -1,0 +1,208 @@
+from django.db import models
+from tinymce.models import HTMLField
+
+# Create your models here.
+
+class HomeSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='slider/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+	    return self.Name
+
+class HomeSlider2(models.Model):
+	Name  = models.CharField(max_length=120)
+	Name2 = models.CharField(max_length=120)
+	Text  = models.CharField(max_length=300)
+	Image = models.ImageField(upload_to='slider2/')
+
+	def __str__(self):
+	    return self.Name
+
+class Homeslide3(models.Model):
+	Name  = models.CharField(max_length=120)
+	Image = models.ImageField(upload_to='slider3/')
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+	    return self.Name
+
+class ContactUs(models.Model):
+	NAME      = models.CharField(max_length=120)
+	COMPANY   = models.CharField(max_length=120)
+	TELEPHONE = models.CharField(max_length=120)
+	EMAIL	  = models.EmailField(max_length=120)
+	MESSAGE   = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+	    return self.NAME
+
+class JoinUs(models.Model):
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+	IMAGE 	   = models.ImageField(upload_to='joinus', blank=True)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+		  return self.NAME
+
+class RequestQuote(models.Model):
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+	CART_ID	   = models.IntegerField()
+	IMAGE 	   = models.ImageField(upload_to='joinus', blank=True)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+		  return self.NAME
+
+class HomeS1(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+	    return self.Name
+
+class HomeS2(models.Model):
+	Name  = models.CharField(max_length=120)
+	Name2 = models.CharField(max_length=120)
+	Text  = models.CharField(max_length=300)
+	Image = models.ImageField(upload_to='s2/')
+
+	def __str__(self):
+	    return self.Name
+
+class Homes3(models.Model):
+	Name  = models.CharField(max_length=120)
+	Image = models.ImageField(upload_to='s3/')
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+	    	return self.Name
+
+class AboutUs(models.Model):
+	Name      = models.CharField(max_length=120)
+	Email	  = models.EmailField(max_length=120)
+	Comment   = models.CharField(max_length=300)
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+		return self.Name
+		
+class AboutUsSlider(models.Model):
+	Name  = models.CharField(max_length=120)
+	Image = models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+	def __str__(self):
+		return self.Name
+
+class SpecialtiesSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class JoinUsSlider(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+# class ProductSlider(models.Model):
+# 	Name = models.CharField(max_length=120)
+# 	Image =models.ImageField(upload_to='s1/')
+# 	class Meta:
+# 		ordering = ('Name',)
+
+# 	def __str__(self):
+# 		return self.Name
+
+# class ProductSlider1(models.Model):
+# 	Name = models.CharField(max_length=120)
+# 	Image =models.ImageField(upload_to='s1/')
+# 	class Meta:
+# 		ordering = ('Name',)
+
+# 	def __str__(self):
+# 		return self.Name
+
+
+class ProductCategory(models.Model):
+	Name = models.CharField(max_length=120)
+	Image =models.ImageField(upload_to='s1/')
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+class ProductSubCategory(models.Model):
+	Name = models.CharField(max_length=120)
+	Category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name		
+
+class ProductsList(models.Model):
+	Name = models.CharField(max_length=120)
+	# unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
+	# quantity=models.IntegerField(default=0)
+	Category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+	SubCategory = models.ForeignKey(ProductSubCategory,blank=True,null=True, on_delete=models.CASCADE)
+	# content=models.TextField(blank=True, null=True)
+	content= HTMLField(blank=True, null=True)
+
+	class Meta:
+		ordering = ('Name',)
+
+	def __str__(self):
+		return self.Name
+
+	@property
+	def images(self):
+		return self.ProductImages_set.all()
+
+class ProductImages(models.Model):
+	Category = models.ForeignKey(ProductsList, related_name='images', on_delete=models.CASCADE)
+	unit_price= models.DecimalField(default= 0.0, max_digits=6, decimal_places=2)
+	quantity=models.IntegerField(default=0)
+	Description=models.CharField(max_length=120)
+	Item_number= models.CharField(max_length=50)
+	Image = models.ImageField(upload_to='ProductsImages/')
+												
+
+class BecomeDistributer(models.Model):
+	NAME       = models.CharField(max_length=120)
+	COMPANY    = models.CharField(max_length=120)
+	TELEPHONE  = models.CharField(max_length=120)
+	EMAIL	   = models.EmailField(max_length=120)
+	MESSAGE    = models.CharField(max_length=300)
+	IMAGE 	   = models.ImageField(upload_to='distributer', blank=True)
+	class Meta:
+		ordering = ('NAME',)
+
+	def __str__(self):
+		  return self.NAME

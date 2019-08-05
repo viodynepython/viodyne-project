@@ -1,0 +1,33 @@
+{% extends "home/header.html" %}>
+<!-- Home slider -->
+{% block content %}
+{% load static %}
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+
+
+        <h2 class="page_headers" style="padding-left: 15px;">Page Not Found</h2>
+        <p style="color: #12295d; padding-left: 15px;">The Requested page was not found</p>
+        <p>Please try our navigation menu or search box.</p>
+        <p>If you haven't found the information your looking for please <a href="">Contact Us</a>and we'll respond as soon as we can.</p>
+      </div>
+   
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+      <div class="map_1">
+        <div class="">
+          <img src="{% static 'images/Searching.jpg' %}">
+          </div>
+      </div>
+    </div>
+
+  </div>
+ 
+  </div>
+  
+</div>
+
+{% endblock %}

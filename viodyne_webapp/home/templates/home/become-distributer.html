@@ -1,0 +1,119 @@
+{% extends "home/header.html" %}>
+      <!-- Home slider -->
+      {% block content %}
+      {% load static %}
+
+      <!-- Home slider -->
+      <div class="main-wrapper bg-gray">
+        <section class="about-us">
+          <div class="container bg-white">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="breadcrumb_panel">
+                  <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Join Our Network</a></li>
+                    <!-- <li><a href="#">Join Our Team</a></li> -->
+                    <li><a href="#">Become a Viodyne Sterile Processing Supplies Distributor
+                      </a></li>                    
+                  </ul>
+                </div>         
+              </div>
+            </div>
+            <div class="row">
+                <h2 class="page_headers" style="padding-left: 15px;">Become a Viodyne Sterile Processing Supplies Distributor</h2>
+            </div>
+            <div class="row">
+          
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">           
+                  
+                  <p style="color: #12295d; padding-left: 15px;">Viodyne Sterile Processing Supplies are primarily sold through authorized distributors.
+                      We are looking to appoint distributors in new territories to replicate the success we have with our current international partners.</p>
+                  <form role="form" action="" method="POST" style="margin-right: 0px;">
+                    {% csrf_token %}
+                    <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Name"><span style="color: #f70611;">* </span>Name</label>
+                        {{ form.NAME }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Company"><span style="color: #f70611;">* </span>Company</label>
+                        {{ form.COMPANY }}
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Telephone"><span style="color: #f70611;">* </span>Telephone</label>
+                        {{ form.TELEPHONE }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="Email"><span style="color: #f70611;">* </span>Email</label>
+                        {{ form.EMAIL }}
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="Message"><span style="color: #f70611;">* </span>Message</label>
+                        {{ form.MESSAGE }}
+                      </div>
+                    </div>
+                    </div>
+                    <!-- <hr class="colorgraph"> -->
+                    <div class="row">
+                      <!-- <div class="col-xs-12 col-md-12"> -->
+                        <div class="col-md-6 col-xs-12">
+                            <div class="g-recaptcha" data-sitekey="6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk"
+                            style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;">
+                            <div style="width: 304px; height: 78px;">
+                              <div>
+                                <iframe
+                                  src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfwgxMUAAAAALFjCu4s8wLAbeL_3MV2vBbOqhUk&amp;co=aHR0cDovL3d3dy52aW9keW5lLmNvbTo4MA..&amp;hl=en&amp;v=v1562567553145&amp;size=normal&amp;cb=uwny1clw7ii8"
+                                  width="304" height="78" role="presentation" name="a-554j9vu93hiy" frameborder="0"
+                                  scrolling="no"
+                                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox">
+                                </iframe></div>
+                              <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
+                                style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
+                              </textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 viodyneBtnPrimery">
+                          <button type="submit" class="btn  bg_Gradient viodyneBtn maTop15">Send</button>
+                        </div>
+                      <!-- </div> -->
+                    </div>
+          
+                    
+                  </form>
+                </div>
+             
+              <div class="col-sm-6 col-md-6 col-lg-6 col-xs-12">
+                <div class="map_1">
+                  <!-- <div id="map_wrapper" style=" height: 400px;"> -->
+                    <!-- <div id="map" style=" width: 100%; height: 100%;">
+                    </div> -->
+                    <div class="">
+                    <img src="{% static 'images/Become_a_CSSD_Distributor.png' %}">
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </div>
+          
+            </div>
+          </div>
+         
+      </section>
+    </div>
+    {% endblock %}
