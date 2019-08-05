@@ -96,7 +96,8 @@ DATABASES = {
            'NAME':'c1viodyne_webapp',
            'USER':'c1viodyne',
            'PASSWORD':'2LeU3d4@fTa7jW',    
-           'HOST':'172.107.178.19',
+        #    'HOST':'172.107.178.19',
+        'HOST':'localhost',
            'PORT':'3306'}
 }
 
