@@ -66,7 +66,7 @@ function initCarousel(elmClass){
 
 }
 function getProducts(id){
-    callWebApi("http://127.0.0.1:8000/getProduct/"+id).then(function(data) {
+    callWebApi("/getProduct/"+id).then(function(data) {
       console.log(data);
 var htmlStr="";
       data.forEach(em => {
